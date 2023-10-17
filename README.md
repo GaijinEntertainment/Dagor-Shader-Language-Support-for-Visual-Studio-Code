@@ -1,1 +1,1 @@
-# Dagor-Shader-Language-Support-for-Visual-Studio-Code
+# Dagor Shader Language Support for Visual Studio Code
