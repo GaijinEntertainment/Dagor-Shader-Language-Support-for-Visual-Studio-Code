@@ -1,5 +1,5 @@
 node_modules
 out
-Dagor-Shader-Language-Server
+.vscode-test-web
 
 package-lock.json

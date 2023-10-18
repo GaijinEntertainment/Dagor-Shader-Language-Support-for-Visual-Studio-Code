@@ -3,6 +3,7 @@
 		"editorconfig.editorconfig",
 		"esbenp.prettier-vscode",
 		"robertohuertasm.vscode-marketplace-preview",
-		"redcmd.tmlanguage-syntax-highlighter"
+		"redcmd.tmlanguage-syntax-highlighter",
+		"amodio.tsl-problem-matcher"
 	]
 }

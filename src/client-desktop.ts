@@ -12,7 +12,7 @@ let client: LanguageClient;
 
 export function activate(context: ExtensionContext) {
 	const serverModule = context.asAbsolutePath(
-		path.join('Dagor-Shader-Language-Server', 'out', 'server.js')
+		path.join('Dagor-Shader-Language-Server', 'out', 'server-desktop.js')
 	);
 
 	const serverOptions: ServerOptions = {
@@ -24,7 +24,7 @@ export function activate(context: ExtensionContext) {
 	};
 
 	const clientOptions: LanguageClientOptions = {
-		documentSelector: [{ scheme: 'file', language: 'dagorsh' }],
+		documentSelector: [{ language: 'dagorsh' }],
 	};
 
 	client = new LanguageClient(

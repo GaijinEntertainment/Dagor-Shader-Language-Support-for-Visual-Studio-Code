@@ -2,16 +2,18 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
+			"label": "Build Extension",
 			"type": "npm",
-			"script": "compile",
+			"script": "build",
 			"group": "build",
 			"presentation": {
 				"panel": "dedicated",
 				"reveal": "never"
 			},
-			"problemMatcher": ["$tsc"]
+			"problemMatcher": ["$ts-webpack"]
 		},
 		{
+			"label": "Watch Extension",
 			"type": "npm",
 			"script": "watch",
 			"isBackground": true,
@@ -23,7 +25,7 @@
 				"panel": "dedicated",
 				"reveal": "never"
 			},
-			"problemMatcher": ["$tsc-watch"]
+			"problemMatcher": ["$ts-webpack-watch"]
 		}
 	]
 }

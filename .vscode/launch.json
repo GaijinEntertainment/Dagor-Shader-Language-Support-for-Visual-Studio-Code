@@ -2,16 +2,52 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
+			"name": "Run Desktop Extension",
 			"type": "extensionHost",
 			"request": "launch",
-			"name": "Launch Client",
 			"runtimeExecutable": "${execPath}",
 			"args": ["--extensionDevelopmentPath=${workspaceRoot}"],
+			"outFiles": ["${workspaceRoot}/out/**/*.js"],
+			"autoAttachChildProcesses": true,
+			"preLaunchTask": {
+				"type": "npm",
+				"script": "watch"
+			}
+		},
+		{
+			"name": "Run Web Extension",
+			"type": "extensionHost",
+			"request": "launch",
+			"debugWebWorkerHost": true,
+			"args": [
+				"--extensionDevelopmentPath=${workspaceRoot}",
+				"--extensionDevelopmentKind=web"
+			],
 			"outFiles": ["${workspaceRoot}/out/**/*.js"],
 			"preLaunchTask": {
 				"type": "npm",
 				"script": "watch"
 			}
+		},
+		{
+			"name": "Attach to Server",
+			"type": "node",
+			"request": "attach",
+			"port": 6009,
+			"restart": true,
+			"outFiles": [
+				"${workspaceFolder}/Dagor-Shader-Language-Server/out/**/*.js"
+			]
+		}
+	],
+	"compounds": [
+		{
+			"name": "Debug Desktop Extension",
+			"configurations": ["Run Desktop Extension", "Attach to Server"]
+		},
+		{
+			"name": "Debug Web Extension",
+			"configurations": ["Run Web Extension", "Attach to Server"]
 		}
 	]
 }
