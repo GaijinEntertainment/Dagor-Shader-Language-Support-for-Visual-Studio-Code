@@ -19,8 +19,11 @@ jobs:
                   submodules: 'true'
             - name: Install Node.js
               uses: actions/setup-node@v3
-            - name: Install dependencies
+            - name: Install dependencies for the client
               run: npm ci
+            - name: Install dependencies for the language server
+              run: npm ci
+              working-directory: ./Dagor-Shader-Language-Server
             - name: Build
               run: npm run build
             - name: ESLint
