@@ -10,7 +10,7 @@
 				"panel": "dedicated",
 				"reveal": "never"
 			},
-			"problemMatcher": ["$ts-webpack"]
+			"problemMatcher": ["$ts-webpack", "$ts-checker-eslint-webpack"]
 		},
 		{
 			"label": "Watch Extension",
@@ -25,7 +25,10 @@
 				"panel": "dedicated",
 				"reveal": "never"
 			},
-			"problemMatcher": ["$ts-webpack-watch"]
+			"problemMatcher": [
+				"$ts-webpack-watch",
+				"$ts-checker-eslint-webpack-watch"
+			]
 		}
 	]
 }

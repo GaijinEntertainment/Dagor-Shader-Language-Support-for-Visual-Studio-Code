@@ -4,6 +4,7 @@
 		"esbenp.prettier-vscode",
 		"robertohuertasm.vscode-marketplace-preview",
 		"redcmd.tmlanguage-syntax-highlighter",
-		"amodio.tsl-problem-matcher"
+		"amodio.tsl-problem-matcher",
+		"dbaeumer.vscode-eslint"
 	]
 }
