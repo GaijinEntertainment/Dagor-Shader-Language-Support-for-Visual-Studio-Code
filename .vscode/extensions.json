@@ -1,10 +1,11 @@
 {
-	"recommendations": [
-		"editorconfig.editorconfig",
-		"esbenp.prettier-vscode",
-		"robertohuertasm.vscode-marketplace-preview",
-		"redcmd.tmlanguage-syntax-highlighter",
-		"amodio.tsl-problem-matcher",
-		"dbaeumer.vscode-eslint"
-	]
+    "recommendations": [
+        "editorconfig.editorconfig",
+        "esbenp.prettier-vscode",
+        "robertohuertasm.vscode-marketplace-preview",
+        "redcmd.tmlanguage-syntax-highlighter",
+        "amodio.tsl-problem-matcher",
+        "dbaeumer.vscode-eslint",
+        "github.vscode-github-actions"
+    ]
 }
