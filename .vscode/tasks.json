@@ -1,59 +1,59 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"label": "Build Extension",
-			"type": "npm",
-			"script": "build",
-			"group": "build",
-			"presentation": {
-				"panel": "dedicated",
-				"reveal": "never"
-			},
-			"problemMatcher": ["$ts-webpack", "$ts-checker-eslint-webpack"]
-		},
-		{
-			"label": "Watch Extension",
-			"type": "npm",
-			"script": "watch",
-			"isBackground": true,
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
-			"presentation": {
-				"panel": "dedicated",
-				"reveal": "never"
-			},
-			"problemMatcher": [
-				"$ts-webpack-watch",
-				"$ts-checker-eslint-webpack-watch"
-			]
-		},
-		{
-			"label": "Build Tests",
-			"type": "npm",
-			"script": "build-tests",
-			"group": "build",
-			"presentation": {
-				"panel": "dedicated",
-				"reveal": "never"
-			},
-			"problemMatcher": ["$tsc"],
-			"dependsOn": ["Build Extension"]
-		},
-		{
-			"label": "Watch Tests",
-			"type": "npm",
-			"script": "watch-tests",
-			"isBackground": true,
-			"group": "build",
-			"presentation": {
-				"panel": "dedicated",
-				"reveal": "never"
-			},
-			"problemMatcher": ["$tsc-watch"],
-			"dependsOn": ["Watch Extension"]
-		}
-	]
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Build Extension",
+            "type": "npm",
+            "script": "build",
+            "group": "build",
+            "presentation": {
+                "panel": "dedicated",
+                "reveal": "never"
+            },
+            "problemMatcher": ["$ts-webpack", "$ts-checker-eslint-webpack"]
+        },
+        {
+            "label": "Watch Extension",
+            "type": "npm",
+            "script": "watch",
+            "isBackground": true,
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "panel": "dedicated",
+                "reveal": "never"
+            },
+            "problemMatcher": [
+                "$ts-webpack-watch",
+                "$ts-checker-eslint-webpack-watch"
+            ]
+        },
+        {
+            "label": "Build Tests",
+            "type": "npm",
+            "script": "build-tests",
+            "group": "build",
+            "presentation": {
+                "panel": "dedicated",
+                "reveal": "never"
+            },
+            "problemMatcher": ["$tsc"],
+            "dependsOn": ["Build Extension"]
+        },
+        {
+            "label": "Watch Tests",
+            "type": "npm",
+            "script": "watch-tests",
+            "isBackground": true,
+            "group": "build",
+            "presentation": {
+                "panel": "dedicated",
+                "reveal": "never"
+            },
+            "problemMatcher": ["$tsc-watch"],
+            "dependsOn": ["Watch Extension"]
+        }
+    ]
 }
