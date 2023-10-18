@@ -26,6 +26,8 @@ jobs:
               working-directory: ./Dagor-Shader-Language-Server
             - name: Build
               run: npm run build
+            - name: Build the tests
+              run: npm run build-tests
             - name: ESLint
               run: npm run eslint
             - name: Prettier lint
