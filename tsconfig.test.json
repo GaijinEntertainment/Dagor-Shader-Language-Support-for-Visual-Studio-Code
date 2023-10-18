@@ -9,6 +9,6 @@
 		"noImplicitReturns": true,
 		"noFallthroughCasesInSwitch": true
 	},
-	"include": ["src"],
-	"exclude": ["node_modules", ".vscode-test", ".vscode-test-web", "src/test"]
+	"include": ["src/test"],
+	"exclude": ["node_modules", ".vscode-test", ".vscode-test-web"]
 }

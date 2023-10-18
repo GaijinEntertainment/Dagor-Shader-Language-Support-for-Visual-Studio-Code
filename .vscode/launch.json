@@ -38,6 +38,23 @@
 			"outFiles": [
 				"${workspaceFolder}/Dagor-Shader-Language-Server/out/**/*.js"
 			]
+		},
+		{
+			"name": "Run E2E Tests",
+			"type": "extensionHost",
+			"request": "launch",
+			"runtimeExecutable": "${execPath}",
+			"args": [
+				"--extensionDevelopmentPath=${workspaceRoot}",
+				"--extensionTestsPath=${workspaceRoot}/out/test/index",
+				"${workspaceRoot}/testFixture"
+			],
+			"outFiles": ["${workspaceRoot}/out/test/**/*.js"],
+			"preLaunchTask": {
+				"script": "watch-tests",
+				"type": "npm"
+			},
+			"internalConsoleOptions": "openOnSessionStart"
 		}
 	],
 	"compounds": [

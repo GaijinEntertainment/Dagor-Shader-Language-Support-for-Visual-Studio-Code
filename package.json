@@ -2,6 +2,7 @@
 	"name": "dagor-shader-language-support",
 	"displayName": "Dagor Shader Language Support",
 	"description": "Language support extension for the Dagor Shader Language.",
+	"publisher": "gaijin",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.83.0"
@@ -37,16 +38,20 @@
 		"vscode:prepublish": "webpack --mode production",
 		"build": "webpack",
 		"watch": "webpack --watch",
+		"build-tests": "tsc -p ./tsconfig.test.json",
+		"watch-tests": "tsc -w -p ./tsconfig.test.json",
 		"open-in-browser": "vscode-test-web --extensionDevelopmentPath=. .",
 		"eslint": "eslint ./src ./Dagor-Shader-Language-Server/src --ext .ts",
 		"prettier-lint": "prettier --check .",
 		"prettier-format": "prettier --write .",
+		"test": "sh ./scripts/e2e.sh",
 		"prepare": "husky install"
 	},
 	"dependencies": {
 		"vscode-languageclient": "^9.0.1"
 	},
 	"devDependencies": {
+		"@types/mocha": "^10.0.3",
 		"@types/node": "^20.8.6",
 		"@types/vscode": "^1.83.0",
 		"@typescript-eslint/eslint-plugin": "^6.8.0",
@@ -56,6 +61,7 @@
 		"eslint": "^8.51.0",
 		"husky": "^8.0.3",
 		"lint-staged": "^15.0.1",
+		"mocha": "^10.2.0",
 		"prettier": "^3.0.3",
 		"prettier-plugin-organize-imports": "^3.2.3",
 		"ts-loader": "^9.5.0",

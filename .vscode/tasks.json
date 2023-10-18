@@ -29,6 +29,31 @@
 				"$ts-webpack-watch",
 				"$ts-checker-eslint-webpack-watch"
 			]
+		},
+		{
+			"label": "Build Tests",
+			"type": "npm",
+			"script": "build-tests",
+			"group": "build",
+			"presentation": {
+				"panel": "dedicated",
+				"reveal": "never"
+			},
+			"problemMatcher": ["$tsc"],
+			"dependsOn": ["Build Extension"]
+		},
+		{
+			"label": "Watch Tests",
+			"type": "npm",
+			"script": "watch-tests",
+			"isBackground": true,
+			"group": "build",
+			"presentation": {
+				"panel": "dedicated",
+				"reveal": "never"
+			},
+			"problemMatcher": ["$tsc-watch"],
+			"dependsOn": ["Watch Extension"]
 		}
 	]
 }
