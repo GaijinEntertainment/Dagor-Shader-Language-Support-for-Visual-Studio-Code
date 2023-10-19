@@ -35,6 +35,7 @@
             "request": "attach",
             "port": 6009,
             "restart": true,
+            "sourceMaps": true,
             "outFiles": [
                 "${workspaceFolder}/Dagor-Shader-Language-Server/out/**/*.js"
             ]
