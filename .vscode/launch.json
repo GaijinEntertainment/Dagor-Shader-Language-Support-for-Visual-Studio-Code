@@ -6,8 +6,8 @@
             "type": "extensionHost",
             "request": "launch",
             "runtimeExecutable": "${execPath}",
-            "args": ["--extensionDevelopmentPath=${workspaceRoot}"],
-            "outFiles": ["${workspaceRoot}/out/**/*.js"],
+            "args": ["--extensionDevelopmentPath=${workspaceFolder}"],
+            "outFiles": ["${workspaceFolder}/out/**/*.js"],
             "autoAttachChildProcesses": true,
             "preLaunchTask": {
                 "type": "npm",
@@ -20,10 +20,10 @@
             "request": "launch",
             "debugWebWorkerHost": true,
             "args": [
-                "--extensionDevelopmentPath=${workspaceRoot}",
+                "--extensionDevelopmentPath=${workspaceFolder}",
                 "--extensionDevelopmentKind=web"
             ],
-            "outFiles": ["${workspaceRoot}/out/**/*.js"],
+            "outFiles": ["${workspaceFolder}/out/**/*.js"],
             "preLaunchTask": {
                 "type": "npm",
                 "script": "watch"
@@ -45,11 +45,11 @@
             "request": "launch",
             "runtimeExecutable": "${execPath}",
             "args": [
-                "--extensionDevelopmentPath=${workspaceRoot}",
-                "--extensionTestsPath=${workspaceRoot}/out/test/index",
-                "${workspaceRoot}/testFixture"
+                "--extensionDevelopmentPath=${workspaceFolder}",
+                "--extensionTestsPath=${workspaceFolder}/out/test/index",
+                "${workspaceFolder}/testFixture"
             ],
-            "outFiles": ["${workspaceRoot}/out/test/**/*.js"],
+            "outFiles": ["${workspaceFolder}/out/test/**/*.js"],
             "preLaunchTask": {
                 "script": "watch-tests",
                 "type": "npm"
