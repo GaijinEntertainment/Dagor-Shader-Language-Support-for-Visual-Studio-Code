@@ -7,7 +7,8 @@ There are no public releases yet.
 -   Syntax highlight (mocked)
 -   Diagnostics (mocked)
 -   Code completion (mocked)
--   Comment toggling (mocked)
--   Bracket coloring (mocked)
--   Auto closing pairs (mocked)
--   Surrounding pairs (mocked)
+-   Comment toggling
+-   Bracket coloring
+-   Auto closing pairs
+-   Surrounding pairs
+-   Folding regions
