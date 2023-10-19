@@ -24,6 +24,7 @@ Dagor-Shader-Language-Server/src
 **/.prettierignore
 **/.prettierrc.json
 **/.vscodeignore
+**/BUILD.md
 **/package-lock.json
 **/tsconfig.json
 **/tsconfig.test.json
@@ -31,5 +32,6 @@ Dagor-Shader-Language-Server/src
 **/*.ts
 **/*.map
 
+Dagor-Shader-Language-Server/CHANGELOG.md
 Dagor-Shader-Language-Server/README.md
 Dagor-Shader-Language-Server/package.json

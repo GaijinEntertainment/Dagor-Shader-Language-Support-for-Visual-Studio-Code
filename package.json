@@ -3,18 +3,27 @@
     "displayName": "Dagor Shader Language Support",
     "description": "Language support extension for the Dagor Shader Language.",
     "publisher": "gaijin",
+    "version": "0.0.1",
+    "license": "BSD-3-Clause",
     "repository": {
         "type": "git",
         "url": "https://github.com/Gaijin-Games-KFT/Dagor-Shader-Language-Support-for-Visual-Studio-Code"
     },
-    "license": "BSD-3-Clause",
-    "version": "0.0.1",
-    "engines": {
-        "vscode": "^1.83.0"
+    "bugs": {
+        "url": "https://github.com/Gaijin-Games-KFT/Dagor-Shader-Language-Support-for-Visual-Studio-Code/issues"
     },
     "categories": [
         "Programming Languages"
     ],
+    "keywords": [
+        "gaijin",
+        "dagor",
+        "shader",
+        "language"
+    ],
+    "engines": {
+        "vscode": "^1.83.0"
+    },
     "contributes": {
         "languages": [
             {
