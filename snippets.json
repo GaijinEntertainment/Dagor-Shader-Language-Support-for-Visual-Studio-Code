@@ -1,0 +1,61 @@
+{
+    "func": {
+        "prefix": "func",
+        "body": ["${1:void} ${2:function}($3){", "\t$0", "}"],
+        "description": "Creates a function"
+    },
+    "var": {
+        "prefix": "var",
+        "body": ["${1:float} ${2:value};$0"],
+        "description": "Creates a variable declaration"
+    },
+    "variableinit": {
+        "prefix": "vari",
+        "body": ["${1:float} ${2:value} = ${3:0};$0"],
+        "description": "Creates a variable declaration with initialization"
+    },
+    "macro": {
+        "prefix": "macro",
+        "body": ["macro ${1:MACRO}($2)", "\t$0", "endmacro"],
+        "description": "Creates a macro"
+    },
+    "hlsl": {
+        "prefix": "hlsl",
+        "body": ["hlsl(${1:cs}) {", "\t$0", "}"],
+        "description": "Creates a hlsl block"
+    },
+    "block": {
+        "prefix": "block",
+        "body": ["(${1:cs}) {", "\t$0", "}"],
+        "description": "Creates a block"
+    },
+    "for": {
+        "prefix": "for",
+        "body": [
+            "for(${1:int} ${2:i} = ${3:0}; ${2:i} < ${4:max}; ${2:i}++) {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Creates a for loop"
+    },
+    "while": {
+        "prefix": "while",
+        "body": ["while(${1:true}) {", "\t$0", "}"],
+        "description": "Creates a while loop"
+    },
+    "if": {
+        "prefix": "if",
+        "body": ["if(${1:true}) {", "\t$0", "}"],
+        "description": "Creates an if statement"
+    },
+    "ifelse": {
+        "prefix": ["ifelse", "ife"],
+        "body": ["if(${1:true}) {", "\t$0", "}else{", "\t", "}"],
+        "description": "Creates an if-else statement"
+    },
+    "struct": {
+        "prefix": "struct",
+        "body": ["struct ${1:Type} {", "\t${2:float} ${3:value};$0", "};"],
+        "description": "Creates a struct"
+    }
+}

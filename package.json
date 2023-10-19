@@ -44,6 +44,12 @@
                 "scopeName": "source.dagorsh",
                 "path": "./Dagor-Shader-Language-Server/grammar/dagorsh.tmLanguage.json"
             }
+        ],
+        "snippets": [
+            {
+                "language": "dagorsh",
+                "path": "./snippets.json"
+            }
         ]
     },
     "main": "./out/client-desktop",
