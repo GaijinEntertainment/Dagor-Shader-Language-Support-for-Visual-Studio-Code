@@ -17,3 +17,7 @@ Dagor Shader Language Support for Visual Studio Code. At the moment it's work in
 ## Issues
 
 If you have any problems or feature request for the extension, feel free to create an issue.
+
+## Build
+
+If you need more informations about the extension's source code, there are [detailed instructions about how to build, run, test, debug, and package](https://github.com/Gaijin-Games-KFT/Dagor-Shader-Language-Support-for-Visual-Studio-Code/blob/main/BUILD.md) it.
