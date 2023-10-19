@@ -32,3 +32,5 @@ jobs:
             - name: Run tests
               run: npm test
               if: runner.os != 'Linux'
+            - name: Package
+              run: npm run package
