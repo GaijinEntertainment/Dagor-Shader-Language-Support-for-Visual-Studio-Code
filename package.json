@@ -42,7 +42,7 @@
             {
                 "language": "dagorsh",
                 "scopeName": "source.dagorsh",
-                "path": "./syntaxes/dagorsh.tmLanguage.json"
+                "path": "./Dagor-Shader-Language-Server/grammar/dagorsh.tmLanguage.json"
             }
         ]
     },
