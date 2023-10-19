@@ -4,12 +4,26 @@
     "description": "Language support extension for the Dagor Shader Language.",
     "publisher": "gaijin",
     "version": "0.0.1",
-    "engines": {
-        "vscode": "^1.83.0"
+    "license": "BSD-3-Clause",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Gaijin-Games-KFT/Dagor-Shader-Language-Support-for-Visual-Studio-Code"
+    },
+    "bugs": {
+        "url": "https://github.com/Gaijin-Games-KFT/Dagor-Shader-Language-Support-for-Visual-Studio-Code/issues"
     },
     "categories": [
         "Programming Languages"
     ],
+    "keywords": [
+        "gaijin",
+        "dagor",
+        "shader",
+        "language"
+    ],
+    "engines": {
+        "vscode": "^1.83.0"
+    },
     "contributes": {
         "languages": [
             {
@@ -38,6 +52,7 @@
         "vscode:prepublish": "webpack --mode production",
         "build": "webpack",
         "watch": "webpack --watch",
+        "package": "vsce package",
         "build-tests": "tsc -p ./tsconfig.test.json",
         "watch-tests": "tsc -w -p ./tsconfig.test.json",
         "open-in-browser": "vscode-test-web --extensionDevelopmentPath=. .",
@@ -58,6 +73,7 @@
         "@typescript-eslint/parser": "^6.8.0",
         "@vscode/test-electron": "^2.3.5",
         "@vscode/test-web": "^0.0.47",
+        "@vscode/vsce": "^2.21.1",
         "eslint": "^8.51.0",
         "husky": "^8.0.3",
         "lint-staged": "^15.0.1",
