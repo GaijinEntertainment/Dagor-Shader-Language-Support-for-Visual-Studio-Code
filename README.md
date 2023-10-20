@@ -6,7 +6,7 @@ Dagor Shader Language Support for Visual Studio Code. At the moment it's work in
 
 ## Features
 
--   Syntax highlight (mocked)
+-   Syntax highlight
 -   Diagnostics (mocked)
 -   Code completion (mocked)
 -   Comment toggling
@@ -14,6 +14,7 @@ Dagor Shader Language Support for Visual Studio Code. At the moment it's work in
 -   Auto closing pairs
 -   Surrounding pairs
 -   Folding regions
+-   Code snippets
 
 ## Issues
 
