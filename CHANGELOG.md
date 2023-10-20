@@ -4,7 +4,7 @@ There are no public releases yet.
 
 ## [Unreleased]
 
--   Syntax highlight (mocked)
+-   Syntax highlight
 -   Diagnostics (mocked)
 -   Code completion (mocked)
 -   Comment toggling
@@ -12,3 +12,4 @@ There are no public releases yet.
 -   Auto closing pairs
 -   Surrounding pairs
 -   Folding regions
+-   Code snippets
