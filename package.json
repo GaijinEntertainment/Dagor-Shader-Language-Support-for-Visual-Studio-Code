@@ -65,7 +65,11 @@
         "snippets": [
             {
                 "language": "dagorsh",
-                "path": "./snippets.json"
+                "path": "./dagorsh-snippets.json"
+            },
+            {
+                "language": "hlsl",
+                "path": "./hlsl-snippets.json"
             }
         ]
     },
