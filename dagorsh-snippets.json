@@ -164,26 +164,26 @@
     "blend": {
         "prefix": "blend",
         "body": [
-            "(${1|blend_asrc,blend_adst,blend_src,blend_dst|} = ${2|zero,one,sc,isc,sa,isa,da,ida,dc,idc,sasat,bf,ibf|};"
+            "${1|blend_asrc,blend_adst,blend_src,blend_dst|} = ${2|zero,one,sc,isc,sa,isa,da,ida,dc,idc,sasat,bf,ibf|};"
         ],
         "description": "Creates a blend assignment"
     },
     "cull-mode": {
         "prefix": "cull-mode",
-        "body": ["(cull_mode = ${1|ccw,cw,none,cullmd|};"],
+        "body": ["cull_mode = ${1|ccw,cw,none,cullmd|};"],
         "description": "Creates a cull mode assignment"
     },
     "depth-stencil-func": {
         "prefix": "depth-stencil-func",
         "body": [
-            "(${1|z_func,stencil_func|} = ${2|never,less,equal,lessequal,greater,notequal,greaterequal,always|};"
+            "${1|z_func,stencil_func|} = ${2|never,less,equal,lessequal,greater,notequal,greaterequal,always|};"
         ],
         "description": "Creates a depth or a stencil func assignment"
     },
     "stencil": {
         "prefix": "stencil",
         "body": [
-            "(${1|stencil_pass,stencil_fail,stencil_zfail|} = ${2|keep,zero,replace,incrsat,decrsat,incr,dect|};"
+            "${1|stencil_pass,stencil_fail,stencil_zfail|} = ${2|keep,zero,replace,incrsat,decrsat,incr,dect|};"
         ],
         "description": "Creates a stencil assignment"
     },
