@@ -37,6 +37,17 @@
                     "sh"
                 ],
                 "configuration": "./language-configuration.json"
+            },
+            {
+                "id": "hlsl",
+                "aliases": [
+                    "HLSL",
+                    "High Level Shader Language"
+                ],
+                "extensions": [
+                    "hlsl"
+                ],
+                "configuration": "./language-configuration.json"
             }
         ],
         "grammars": [
@@ -44,6 +55,11 @@
                 "language": "dagorsh",
                 "scopeName": "source.dagorsh",
                 "path": "./Dagor-Shader-Language-Server/grammar/dagorsh.tmLanguage.json"
+            },
+            {
+                "language": "hlsl",
+                "scopeName": "source.hlsl",
+                "path": "./Dagor-Shader-Language-Server/grammar/hlsl.tmLanguage.json"
             }
         ],
         "snippets": [
