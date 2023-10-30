@@ -103,6 +103,15 @@
         ],
         "description": "Creates a macro block"
     },
+    "if-not-defined-macro": {
+        "prefix": "if-not-defined-macro",
+        "body": [
+            "define_macro_if_not_defined ${1:${TM_FILENAME_BASE/(.*)/${1:/upcase}/}}($2)",
+            "\t$0",
+            "endmacro"
+        ],
+        "description": "Creates a macro block"
+    },
     "##if": {
         "prefix": "##if",
         "body": ["##if ${1:true}", "\t$0", "##endif"],
@@ -135,7 +144,7 @@
     },
     "block": {
         "prefix": "block",
-        "body": ["block(${1|scene,frame|}) {", "\t$0", "}"],
+        "body": ["block(${1|scene,frame,global_const,object|}) {", "\t$0", "}"],
         "description": "Creates a block"
     },
     "shader": {
@@ -147,10 +156,36 @@
         "prefix": "shader-stage",
         "body": [
             "(${1|cs,vs,ps|}) {",
-            "\t${2:variable_name}@${3|f1,f2,f3,f4,f44,i1,i2,i3,i4,tex,tex2d,tex3d,texArray,texCube,texCubeArray,smp2d,smp3d,smpArray,smpCube,smpCubeArray,shd,buf,cbuf|} = ${4:other_variable_name};$0",
+            "\t${2:variable_name}@${3|f1,f2,f3,f4,f44,i1,i2,i3,i4,tex,tex2d,tex3d,texArray,texCube,texCubeArray,smp2d,smp3d,smpArray,smpCube,smpCubeArray,shd,buf,cbuf,uav|} = ${4:other_variable_name};$0",
             "}"
         ],
         "description": "Creates a shader stage block"
+    },
+    "blend": {
+        "prefix": "blend",
+        "body": [
+            "(${1|blend_asrc,blend_adst,blend_src,blend_dst|} = ${2|zero,one,sc,isc,sa,isa,da,ida,dc,idc,sasat,bf,ibf|};"
+        ],
+        "description": "Creates a blend assignment"
+    },
+    "cull-mode": {
+        "prefix": "cull-mode",
+        "body": ["(cull_mode = ${1|ccw,cw,none,cullmd|};"],
+        "description": "Creates a cull mode assignment"
+    },
+    "depth-stencil-func": {
+        "prefix": "depth-stencil-func",
+        "body": [
+            "(${1|z_func,stencil_func|} = ${2|never,less,equal,lessequal,greater,notequal,greaterequal,always|};"
+        ],
+        "description": "Creates a depth or a stencil func assignment"
+    },
+    "stencil": {
+        "prefix": "stencil",
+        "body": [
+            "(${1|stencil_pass,stencil_fail,stencil_zfail|} = ${2|keep,zero,replace,incrsat,decrsat,incr,dect|};"
+        ],
+        "description": "Creates a stencil assignment"
     },
     "cbuf": {
         "prefix": "cbuf",
@@ -166,7 +201,7 @@
     "compile": {
         "prefix": "compile",
         "body": [
-            "compile(\"target_${1|cs,vs,vs_half,vs_for_tess,vs_for_gs,hs,ds,gs,ps,ps_half,|}\", \"${2:main}\");"
+            "compile(\"${1|target_cs,target_vs,target_vs_half,target_vs_for_tess,target_vs_for_gs,target_hs,target_ds,target_gs,target_ps,target_ps_half|}\", \"${2:main}\");"
         ],
         "description": "Creates a compile statement"
     }
