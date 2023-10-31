@@ -156,7 +156,7 @@
         "prefix": "shader-stage",
         "body": [
             "(${1|cs,vs,ps|}) {",
-            "\t${2:variable_name}@${3|f1,f2,f3,f4,f44,i1,i2,i3,i4,tex,tex2d,tex3d,texArray,texCube,texCubeArray,smp2d,smp3d,smpArray,smpCube,smpCubeArray,shd,buf,cbuf,uav|} = ${4:other_variable_name};$0",
+            "\t${2:variable_name}@${3|f1,f2,f3,f4,f44,i1,i2,i3,i4,tex,tex2d,tex3d,texArray,texCube,texCubeArray,smp2d,smp3d,smpArray,smpCube,smpCubeArray,static,staticCube,staticTexArray,shd,buf,cbuf,uav|} = ${4:other_variable_name};$0",
             "}"
         ],
         "description": "Creates a shader stage block"
@@ -170,7 +170,7 @@
     },
     "cull-mode": {
         "prefix": "cull-mode",
-        "body": ["cull_mode = ${1|ccw,cw,none,cullmd|};"],
+        "body": ["cull_mode = ${1|ccw,cw,none|};"],
         "description": "Creates a cull mode assignment"
     },
     "depth-stencil-func": {
