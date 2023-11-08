@@ -77,8 +77,15 @@ This repository contains 2 versions of the extension: the desktop version can ru
 
 ## Debug
 
+### TypeScript code
+
 -   If you want to write something to the console, in the client, just use `console.log`. In the server, use `this.connection.console.log` (actually, if you run the server from Visual Studio Code, `console.log` will work, however, in Visual Studio, only `this.connection.console.log` will work, `console.log` will break the extension).
 -   You can use a breakpoint in the client as usual, but if you want to put it into the server, run the extension, using **Debug Desktop Extension**. At the moment breakpoints don't work in the server in the web version.
+
+### TextMate grammar
+
+-   If you want to know which TextMate rule matched at the cursor, press F1, and select **Developer: Inspect Editor Tokens and Scopes**.
+-   If you want to read the steps of the TextMate matching, press F1, and select **Developer: Start Text Mate Syntax Grammar Logging**.
 
 ## Scripts
 

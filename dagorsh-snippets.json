@@ -1,0 +1,208 @@
+{
+    "#include": {
+        "prefix": "#include",
+        "body": ["#include \"${1:file_name.hlsl}\""],
+        "description": "Creates an HLSL include statement"
+    },
+    "#define": {
+        "prefix": "#define",
+        "body": ["#define ${1:MACRO_NAME} ${2:1}"],
+        "description": "Creates an HLSL define"
+    },
+    "#define-function": {
+        "prefix": "#define-function",
+        "body": ["#define ${1:MACRO_NAME}(${2}) ${3:1}"],
+        "description": "Creates an HLSL function-like define"
+    },
+    "#if": {
+        "prefix": "#if",
+        "body": ["#if ${1:true}", "\t$0", "#endif"],
+        "description": "Creates an HLSL #if statement"
+    },
+    "#ifdef": {
+        "prefix": "#ifdef",
+        "body": ["#ifdef ${1:MACRO_NAME}", "\t$0", "#endif"],
+        "description": "Creates an HLSL #ifdef statement"
+    },
+    "#ifndef": {
+        "prefix": "#ifndef",
+        "body": ["#ifndef ${1:MACRO_NAME}", "\t$0", "#endif"],
+        "description": "Creates an HLSL #ifndef statement"
+    },
+    "numthreads": {
+        "prefix": "numthreads",
+        "body": ["[numthreads(${1:1}, ${2:1}, ${3:1})]"],
+        "description": "Creates an HLSL numthreads attribute"
+    },
+    "function": {
+        "prefix": "function",
+        "body": ["${1:void} ${2:function_name}($3){", "\t$0", "}"],
+        "description": "Creates an HLSL function"
+    },
+    "variable-declaration": {
+        "prefix": "variable-declaration",
+        "body": ["${1:float} ${2:value};"],
+        "description": "Creates an HLSL variable declaration"
+    },
+    "for": {
+        "prefix": "for",
+        "body": [
+            "for(${1:int} ${2:i} = ${3:0}; ${2:i} < ${4:16}; ${2:i}++) {",
+            "\t$0",
+            "}"
+        ],
+        "description": "Creates an HLSL for loop"
+    },
+    "while": {
+        "prefix": "while",
+        "body": ["while(${1:true}) {", "\t$0", "}"],
+        "description": "Creates an HLSL while loop"
+    },
+    "do-while": {
+        "prefix": "do-while",
+        "body": ["do {", "\t$0", "} while(${1:true});"],
+        "description": "Creates an HLSL do-while loop"
+    },
+    "if": {
+        "prefix": "if",
+        "body": ["if(${1:true}) {", "\t$0", "}"],
+        "description": "Creates an HLSL if statement"
+    },
+    "switch-case": {
+        "prefix": "switch-case",
+        "body": [
+            "switch(${1:name}) {",
+            "\tcase ${2:1}: $3",
+            "\tcase ${4:2}: $5",
+            "\tdefault: $6",
+            "}"
+        ],
+        "description": "Creates an HLSL switch-case statement"
+    },
+    "struct": {
+        "prefix": ["struct", "type-declaration"],
+        "body": [
+            "struct ${1:TypeName} {",
+            "\t${2:float} ${3:variableName};$0",
+            "};"
+        ],
+        "description": "Creates an HLSL struct declaration"
+    },
+
+    "include": {
+        "prefix": "include",
+        "body": ["include \"${1:file_name.sh}\""],
+        "description": "Creates an include statement"
+    },
+    "macro": {
+        "prefix": "macro",
+        "body": [
+            "macro ${1:${TM_FILENAME_BASE/(.*)/${1:/upcase}/}}($2)",
+            "\t$0",
+            "endmacro"
+        ],
+        "description": "Creates a macro block"
+    },
+    "if-not-defined-macro": {
+        "prefix": "if-not-defined-macro",
+        "body": [
+            "define_macro_if_not_defined ${1:${TM_FILENAME_BASE/(.*)/${1:/upcase}/}}($2)",
+            "\t$0",
+            "endmacro"
+        ],
+        "description": "Creates a macro block"
+    },
+    "##if": {
+        "prefix": "##if",
+        "body": ["##if ${1:true}", "\t$0", "##endif"],
+        "description": "Creates an ##if statement"
+    },
+    "interval": {
+        "prefix": "interval",
+        "body": [
+            "interval ${1:variable_name}: ${2:lower_value} < ${3:1}, ${4:upper_value};"
+        ],
+        "description": "Creates an interval"
+    },
+    "variable declaration with interval": {
+        "prefix": "variable-declaration-interval",
+        "body": [
+            "${1:int} ${2:variable_name} = ${3:0};",
+            "interval ${2}: ${4:lower_value} < ${5:1}, ${6:upper_value};"
+        ],
+        "description": "Creates a variable declaration with an interval"
+    },
+    "hlsl": {
+        "prefix": "hlsl",
+        "body": ["hlsl {", "\t$0", "}"],
+        "description": "Creates a hlsl block"
+    },
+    "hlsl-stage": {
+        "prefix": "hlsl-stage",
+        "body": ["hlsl(${1|cs,vs,hs,ds,gs,ps|}) {", "\t$0", "}"],
+        "description": "Creates a hlsl stage block"
+    },
+    "block": {
+        "prefix": "block",
+        "body": ["block(${1|scene,frame,global_const,object|}) {", "\t$0", "}"],
+        "description": "Creates a block"
+    },
+    "shader": {
+        "prefix": "shader",
+        "body": ["shader ${1:$TM_FILENAME_BASE} {", "\t$0", "}"],
+        "description": "Creates a shader block"
+    },
+    "shader-stage": {
+        "prefix": "shader-stage",
+        "body": [
+            "(${1|cs,vs,ps|}) {",
+            "\t${2:variable_name}@${3|f1,f2,f3,f4,f44,i1,i2,i3,i4,tex,tex2d,tex3d,texArray,texCube,texCubeArray,smp2d,smp3d,smpArray,smpCube,smpCubeArray,static,staticCube,staticTexArray,shd,buf,cbuf,uav|} = ${4:other_variable_name};$0",
+            "}"
+        ],
+        "description": "Creates a shader stage block"
+    },
+    "blend": {
+        "prefix": "blend",
+        "body": [
+            "${1|blend_asrc,blend_adst,blend_src,blend_dst|} = ${2|zero,one,sc,isc,sa,isa,da,ida,dc,idc,sasat,bf,ibf|};"
+        ],
+        "description": "Creates a blend assignment"
+    },
+    "cull-mode": {
+        "prefix": "cull-mode",
+        "body": ["cull_mode = ${1|ccw,cw,none|};"],
+        "description": "Creates a cull mode assignment"
+    },
+    "depth-stencil-func": {
+        "prefix": "depth-stencil-func",
+        "body": [
+            "${1|z_func,stencil_func|} = ${2|never,less,equal,lessequal,greater,notequal,greaterequal,always|};"
+        ],
+        "description": "Creates a depth or a stencil func assignment"
+    },
+    "stencil": {
+        "prefix": "stencil",
+        "body": [
+            "${1|stencil_pass,stencil_fail,stencil_zfail|} = ${2|keep,zero,replace,incrsat,decrsat,incr,dect|};"
+        ],
+        "description": "Creates a stencil assignment"
+    },
+    "cbuf": {
+        "prefix": "cbuf",
+        "body": [
+            "${1:name}@cbuf = ${2:name} hlsl {",
+            "\tcbuffer ${1}@cbuf {",
+            "\t\t${4:float4} ${5:name}[${6:1024}];$0",
+            "\t};",
+            "}"
+        ],
+        "description": "Creates a cbuf declaration"
+    },
+    "compile": {
+        "prefix": "compile",
+        "body": [
+            "compile(\"${1|target_cs,target_vs,target_vs_half,target_vs_for_tess,target_vs_for_gs,target_hs,target_ds,target_gs,target_ps,target_ps_half|}\", \"${2:main}\");"
+        ],
+        "description": "Creates a compile statement"
+    }
+}
