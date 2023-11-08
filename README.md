@@ -2,13 +2,11 @@
 
 [![build](https://github.com/Gaijin-Games-KFT/Dagor-Shader-Language-Support-for-Visual-Studio-Code/actions/workflows/build.yml/badge.svg)](https://github.com/Gaijin-Games-KFT/Dagor-Shader-Language-Support-for-Visual-Studio-Code/actions/workflows/build.yml)
 
-Dagor Shader Language Support for Visual Studio Code. At the moment it's work in progress and some of it's features are mocked.
+Dagor Shader Language Support for Visual Studio Code. At the moment it's work in progress.
 
 ## Features
 
 -   Syntax highlight
--   Diagnostics (mocked)
--   Code completion (mocked)
 -   Comment toggling
 -   Bracket coloring
 -   Auto closing pairs
