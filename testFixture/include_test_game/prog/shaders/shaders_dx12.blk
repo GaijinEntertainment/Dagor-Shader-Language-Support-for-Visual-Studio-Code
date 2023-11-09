@@ -1,0 +1,3 @@
+include "_build/shaders_pc11.blk"
+include "common_inc_dirs.blk"
+include not_existing.blk            // not existing file
