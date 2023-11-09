@@ -4,10 +4,10 @@ import * as assert from 'assert';
 import * as path from 'path';
 import * as vscode from 'vscode';
 
-suite('Document link resolve', () => {
-    const shadersFolder = 'include_test_game/prog/shaders';
+const shadersFolder = 'include_test_game/prog/shaders';
 
-    test('should find the included files, based on the include folders in .sh files', async () => {
+suite('Document link resolve include directives in .sh files', () => {
+    test('should find the included files, based on the include folders', async () => {
         const uri = getDocumentUri(`${shadersFolder}/test.sh`);
         await openDocumentAndAssertLinks(uri, [
             'folder_2/test_inc_3.hlsl', //  #include "test_inc_3.hlsl"
@@ -18,8 +18,10 @@ suite('Document link resolve', () => {
             'folder_2/test_inc_3.sh', //    include "test_inc_3.sh"
         ]);
     });
+});
 
-    test('should find the included files, based on the include folders in .hlsl files', async () => {
+suite('Document link resolve include directives in .sh files', () => {
+    test('should find the included files, based on the include folders', async () => {
         const uri = getDocumentUri(`${shadersFolder}/test.hlsl`);
         await openDocumentAndAssertLinks(uri, [
             'folder_2/test_inc_3.hlsl', //  #include "test_inc_3.hlsl"
