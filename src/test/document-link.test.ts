@@ -9,12 +9,13 @@ suite('Document link include directives in .sh files', () => {
     test('should find normal includes', async () => {
         const uri = getDocumentUri(`${shadersFolder}/test.sh`);
         await openDocumentAndAssertLinks(uri, [
-            getDocumenLink(getRange(3, 14, 3, 29)), // #include "test_inc_3.hlsl"
-            getDocumenLink(getRange(4, 14, 4, 29)), // #include "test_inc_1.hlsl"
-            getDocumenLink(getRange(5, 14, 5, 29)), // #include <test_inc_1.hlsl>
-            getDocumenLink(getRange(6, 14, 6, 32)), // #include <../test_inc_1.hlsl>
+            getDocumenLink(getRange(4, 14, 4, 29)), // #include "test_inc_3.hlsl"
+            getDocumenLink(getRange(5, 14, 5, 29)), // #include "test_inc_1.hlsl"
+            getDocumenLink(getRange(6, 14, 6, 29)), // #include <test_inc_1.hlsl>
+            getDocumenLink(getRange(7, 14, 7, 32)), // #include <../test_inc_1.hlsl>
             getDocumenLink(getRange(0, 9, 0, 22)), // include "test_inc_1.sh"
             getDocumenLink(getRange(1, 9, 1, 22)), // include "test_inc_3.sh"
+            getDocumenLink(getRange(2, 18, 2, 31)), // include_optional "test_inc_2.sh"
         ]);
     });
 

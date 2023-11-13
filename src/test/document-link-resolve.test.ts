@@ -16,6 +16,7 @@ suite('Document link resolve include directives in .sh files', () => {
             'test_inc_1.hlsl', //           #include <../test_inc_1.hlsl>
             'folder_1/test_inc_1.sh', //    include "test_inc_1.sh"
             'folder_2/test_inc_3.sh', //    include "test_inc_3.sh"
+            'folder_1/test_inc_2.sh', //    include_optional "test_inc_2.sh"
         ]);
     });
 });
