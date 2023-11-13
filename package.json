@@ -71,6 +71,19 @@
                 "language": "hlsl",
                 "path": "./hlsl-snippets.json"
             }
+        ],
+        "configuration": [
+            {
+                "properties": {
+                    "dagor-shader-language-support.shaderConfigOverride": {
+                        "type": "string",
+                        "default": "",
+                        "pattern": ".*?shaders_(.*?)\\.blk|^$",
+                        "patternErrorMessage": "The shader config file's name has to be shaders_<CONFIG>.blk.",
+                        "markdownDescription": " Shader configs are .blk files, usually located in the games' `prog/shaders` folders, and they determine include folders. For example: `samples/testGI/prog/shaders/shaders_dx12.blk`. If you want to override the extension's automatic shader config selection, provide the shader config's path here. Leaving it empty enables the automatic selection based on game, platform, and driver in launch options."
+                    }
+                }
+            }
         ]
     },
     "main": "./out/client-desktop",
