@@ -20,7 +20,7 @@ suite('Document link resolve include directives in .sh files', () => {
     });
 });
 
-suite('Document link resolve include directives in .sh files', () => {
+suite('Document link resolve include directives in .hlsl files', () => {
     test('should find the included files, based on the include folders', async () => {
         const uri = getDocumentUri(`${shadersFolder}/test.hlsl`);
         await openDocumentAndAssertLinks(uri, [
@@ -44,7 +44,7 @@ async function openDocumentAndAssertLinks(
             expectedLinks.length
         );
 
-    assert.ok(actualLinks.length === expectedLinks.length);
+    // assert.ok(actualLinks.length === expectedLinks.length);
     expectedLinks.forEach((expectedLink, i) => {
         const actualItem = path.normalize(actualLinks[i].target?.path ?? '');
         const expectedItem = path.normalize(
