@@ -44,7 +44,7 @@ async function openDocumentAndAssertLinks(
             expectedLinks.length
         );
 
-    // assert.ok(actualLinks.length === expectedLinks.length);
+    assert.ok(actualLinks.length === expectedLinks.length);
     expectedLinks.forEach((expectedLink, i) => {
         const actualItem = path.normalize(actualLinks[i].target?.path ?? '');
         const expectedItem = path.normalize(
