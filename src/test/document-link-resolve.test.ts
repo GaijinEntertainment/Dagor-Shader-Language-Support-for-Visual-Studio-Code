@@ -50,6 +50,8 @@ async function openDocumentAndAssertLinks(
         const expectedItem = path.normalize(
             `include_test_game/prog/shaders/${expectedLink}`
         );
+        console.log(`actual: ${actualItem}`);
+        console.log(`expected: ${expectedItem}`);
         assert.ok(actualItem.endsWith(expectedItem));
     });
 }
