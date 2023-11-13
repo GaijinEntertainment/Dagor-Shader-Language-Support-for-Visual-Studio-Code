@@ -47,9 +47,7 @@ async function openDocumentAndAssertLinks(
     assert.ok(actualLinks.length === expectedLinks.length);
     expectedLinks.forEach((expectedLink, i) => {
         const actualItem = path.normalize(actualLinks[i].target?.path ?? '');
-        const expectedItem = path.normalize(
-            `include_test_game/prog/shaders/${expectedLink}`
-        );
+        const expectedItem = path.normalize(`${shadersFolder}/${expectedLink}`);
         assert.ok(actualItem.endsWith(expectedItem));
     });
 }
