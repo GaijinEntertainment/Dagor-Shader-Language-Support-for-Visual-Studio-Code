@@ -7,6 +7,7 @@ import {
     ServerOptions,
     TransportKind,
 } from 'vscode-languageclient/node';
+import { EXTENSION_ID, EXTENSION_NAME } from './constant';
 
 let client: LanguageClient;
 
@@ -29,8 +30,8 @@ export function activate(context: ExtensionContext) {
     };
 
     client = new LanguageClient(
-        'dagor-shader-language-support',
-        'Dagor Shader Language Support',
+        EXTENSION_ID,
+        EXTENSION_NAME,
         serverOptions,
         clientOptions
     );

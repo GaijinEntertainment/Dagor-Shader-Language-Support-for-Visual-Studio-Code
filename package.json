@@ -74,8 +74,9 @@
         ],
         "configuration": [
             {
+                "title": "Dagor Shader Language Support",
                 "properties": {
-                    "dagor-shader-language-support.shaderConfigOverride": {
+                    "dagorShaderLanguageServer.shaderConfigOverride": {
                         "type": "string",
                         "default": "",
                         "pattern": ".*?shaders_(.*?)\\.blk|^$",
