@@ -2,7 +2,7 @@
 
 ## Desktop and web extension versions
 
-This repository contains 2 versions of the extension: the desktop version can run in Visual Studio Code, the web version can run in https://github.dev or https://vscode.dev. At the moment the desktop and the web versions have exactly the same features, but in the future, there will be differences (for example the web version won't be able to run the compiler).
+This repository contains 2 versions of the extension: the desktop version can run in Visual Studio Code, the web version can run in https://github.dev or https://vscode.dev. The web version doesn't support document links, because in the browser, VS Code uses virtual workspaces and therefore the language server can't access directly files.
 
 ## Build, run, and test
 
@@ -79,7 +79,7 @@ This repository contains 2 versions of the extension: the desktop version can ru
 
 ### TypeScript code
 
--   If you want to write something to the console, in the client, just use `console.log`. In the server, use `this.connection.console.log` (actually, if you run the server from Visual Studio Code, `console.log` will work, however, in Visual Studio, only `this.connection.console.log` will work, `console.log` will break the extension).
+-   If you want to write something to the console, in the client, just use `console.log`. In the server, use `log`, ˛`logInfo`, `logWarning`, or `logError` (actually, if you run the server from Visual Studio Code, `console.log` will work, however, in Visual Studio, `console.log` will break the extension).
 -   You can use a breakpoint in the client as usual, but if you want to put it into the server, run the extension, using **Debug Desktop Extension**. At the moment breakpoints don't work in the server in the web version.
 
 ### TextMate grammar

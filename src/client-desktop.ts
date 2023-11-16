@@ -7,6 +7,7 @@ import {
     ServerOptions,
     TransportKind,
 } from 'vscode-languageclient/node';
+import { EXTENSION_ID, EXTENSION_NAME } from './constant';
 
 let client: LanguageClient;
 
@@ -25,12 +26,12 @@ export function activate(context: ExtensionContext) {
     };
 
     const clientOptions: LanguageClientOptions = {
-        documentSelector: [{ language: 'dagorsh' }],
+        documentSelector: [{ language: 'dagorsh' }, { language: 'hlsl' }],
     };
 
     client = new LanguageClient(
-        'dagor-shader-language-support',
-        'Dagor Shader Language Support',
+        EXTENSION_ID,
+        EXTENSION_NAME,
         serverOptions,
         clientOptions
     );
