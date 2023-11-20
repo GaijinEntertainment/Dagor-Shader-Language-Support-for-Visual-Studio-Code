@@ -5,6 +5,7 @@
 /** @typedef {import('webpack').Configuration} WebpackConfig **/
 
 const path = require('path');
+const getServerConfigs = require('./Dagor-Shader-Language-Server/webpack.config.js');
 
 /** @type WebpackConfig */
 const clientWebConfig = {
@@ -77,12 +78,12 @@ const clientDesktopConfig = {
     devtool: 'source-map',
 };
 
-const serverConfig = require('./Dagor-Shader-Language-Server/webpack.config.js');
-const serverDesktopConfig = serverConfig[0];
-const serverWebConfig = serverConfig[1];
-module.exports = [
-    clientDesktopConfig,
-    clientWebConfig,
-    serverDesktopConfig,
-    serverWebConfig,
-];
+module.exports = (_env, argv) => {
+    const [serverDesktopConfig, serverWebConfig] = getServerConfigs(_env, argv);
+    return [
+        clientDesktopConfig,
+        clientWebConfig,
+        serverDesktopConfig,
+        serverWebConfig,
+    ];
+};

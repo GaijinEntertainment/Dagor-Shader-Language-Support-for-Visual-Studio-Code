@@ -2,7 +2,7 @@
 
 ## Desktop and web extension versions
 
-This repository contains 2 versions of the extension: the desktop version can run in Visual Studio Code, the web version can run in https://github.dev or https://vscode.dev. The web version doesn't support document links, because in the browser, VS Code uses virtual workspaces and therefore the language server can't access directly files.
+This repository contains 2 versions of the extension: the desktop version can run in Visual Studio Code, the web version can run in https://github.dev or https://vscode.dev. The web version doesn't support document links, because in the browser, VS Code uses virtual workspaces and therefore the language server can't access directly files. The desktop version, in production mode, on x64 architexture, uses on of the the language server's platform-specific executables. In other cases the extension uses Node.js to run the language server.
 
 ## Build, run, and test
 
@@ -70,10 +70,16 @@ This repository contains 2 versions of the extension: the desktop version can ru
 13. Package the extension
 
     ```
-    npm run package
+    npm run package-all
     ```
 
-    If you add new files which are not required at runtime, add them to the `.vscodeignore` file to keep the package size as low as possible.
+    or
+
+    ```
+    npm run package-<platform>-x64
+    ```
+
+    If you add new files which are not required at runtime, add them to all `.vscodeignore` files to keep the package size as low as possible.
 
 ## Debug
 
@@ -89,10 +95,14 @@ This repository contains 2 versions of the extension: the desktop version can ru
 
 ## Scripts
 
--   **vscode:prepublish**: Builds both desktop and the web versions of the client and the server in production mode.
+-   **build-production**: Builds both desktop and the web versions of the client and the server in production mode.
 -   **build**: Builds both the client and the server in development mode.
 -   **watch**: Same as **build**, but it rebuilds the code as you change (and save) a file.
--   **package**: Builds both the extension using **vscode:prepublish** and creates a `.vsix` package, which is deployable.
+-   **package-universal**: Packages the Universal version of the extension. It doesn't contain platform-specific executable of the language server and therefore it can't run without Node.js. Before running this script, you have to use **build-production**.
+-   **package-windows-x64**: Packages the x64 Windows-specific version of the extension. It contains the Windows-specific executable of the language server and therefore it can run without Node.js. Before running this script, you have to use **build-production**.
+-   **package-macos-x64**: Packages the x64 Mac-specific version of the extension. It contains the Mac-specific executable of the language server and therefore it can run without Node.js. Before running this script, you have to use **build-production**.
+-   **package-linux-x64**: Packages the x64 Linux-specific version of the extension. It contains the Linux-specific executable of the language server and therefore it can run without Node.js. Before running this script, you have to use **build-production**.
+-   **package-all**: Packages all versions (Universal, Windows, Mac, Linux) of the extension. The Universal version can't run without Node.js, but the others can. Before running this script, you have to use **build-production**.
 -   **build-tests**: Builds the E2E tests.
 -   **watch-tests**: Same as **build-tests**, but it rebuilds the code as you change (and save) a file.
 -   **open-in-browser**: Opens a browser and runs the web version of the extension. Use **build** or **watch** before it.
