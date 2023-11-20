@@ -8,7 +8,7 @@ jobs:
                     - os: windows-latest
                       command: package-windows-x64
                     - os: ubuntu-latest
-                      command: package-ubuntu-x64
+                      command: package-linux-x64
                     - os: macos-latest
                       command: package-macos-x64
         runs-on: ${{ matrix.os }}
