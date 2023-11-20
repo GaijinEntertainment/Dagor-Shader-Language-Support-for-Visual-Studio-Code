@@ -39,4 +39,5 @@ Dagor-Shader-Language-Server/package.json
 
 # platform-specific ignore
 
-Dagor-Shader-Language-Server/bin
+Dagor-Shader-Language-Server/bin/server-desktop-linux
+Dagor-Shader-Language-Server/bin/server-desktop-win.exe

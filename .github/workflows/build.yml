@@ -4,15 +4,21 @@ jobs:
     build:
         strategy:
             matrix:
-                os: [windows-latest, ubuntu-latest, macos-latest]
+                include:
+                    - os: windows-latest
+                      command: package-windows-x64
+                    - os: ubuntu-latest
+                      command: package-linux-x64
+                    - os: macos-latest
+                      command: package-macos-x64
         runs-on: ${{ matrix.os }}
         steps:
             - name: Checkout
-              uses: actions/checkout@v3
+              uses: actions/checkout@v4
               with:
                   submodules: 'true'
             - name: Install Node.js
-              uses: actions/setup-node@v3
+              uses: actions/setup-node@v4
             - name: Install dependencies for the client
               run: npm ci
             - name: Install dependencies for the language server
@@ -32,5 +38,9 @@ jobs:
             - name: Run tests
               run: npm test
               if: runner.os != 'Linux'
-            - name: Package
-              run: npm run package
+            - name: Build in production mode
+              run: npm run build-production
+            - name: Create platform-specific package
+              run: npm run ${{ matrix.command }}
+            - name: Create Universal package
+              run: npm run package-universal
