@@ -10,13 +10,13 @@ suite('Document link resolve include directives in .sh files', () => {
     test('should find the included files, based on the include folders', async () => {
         const uri = getDocumentUri(`${shadersFolder}/test.sh`);
         await openDocumentAndAssertLinks(uri, [
+            'test_inc_1.sh', //             include "test_inc_1.sh"
+            'folder_2/test_inc_3.sh', //    include "test_inc_3.sh"
+            'test_inc_2.sh', //             include_optional "test_inc_2.sh"
             'folder_2/test_inc_3.hlsl', //  #include "test_inc_3.hlsl"
             'test_inc_1.hlsl', //           #include "test_inc_1.hlsl"
             'folder_1/test_inc_1.hlsl', //  #include <test_inc_1.hlsl>
             'test_inc_1.hlsl', //           #include <../test_inc_1.hlsl>
-            'folder_1/test_inc_1.sh', //    include "test_inc_1.sh"
-            'folder_2/test_inc_3.sh', //    include "test_inc_3.sh"
-            'folder_1/test_inc_2.sh', //    include_optional "test_inc_2.sh"
         ]);
     });
 });
@@ -39,13 +39,13 @@ suite('Document link resolve override include directives in .sh files', () => {
 
         const uri = getDocumentUri(`${shadersFolder}/test.sh`);
         await openDocumentAndAssertLinks(uri, [
+            'test_inc_1.sh', //             include "test_inc_1.sh"
+            'folder_2/test_inc_3.sh', //    include "test_inc_3.sh"
+            'test_inc_2.sh', //             include_optional "test_inc_2.sh"
             'folder_2/test_inc_3.hlsl', //  #include "test_inc_3.hlsl"
             'test_inc_1.hlsl', //           #include "test_inc_1.hlsl"
             'test_inc_1.hlsl', //           #include <test_inc_1.hlsl>
             'test_inc_1.hlsl', //           #include <../test_inc_1.hlsl>
-            'test_inc_1.sh', //             include "test_inc_1.sh"
-            'folder_2/test_inc_3.sh', //    include "test_inc_3.sh"
-            'test_inc_2.sh', //             include_optional "test_inc_2.sh"
         ]);
 
         await setShaderConfigOverride('');

@@ -1,16 +1,16 @@
 import { ExtensionContext, ExtensionMode } from 'vscode';
-
-import * as fsp from 'fs/promises';
-import * as os from 'os';
-import * as path from 'path';
-
 import {
     LanguageClient,
     LanguageClientOptions,
     ServerOptions,
     TransportKind,
 } from 'vscode-languageclient/node';
+
 import { EXTENSION_ID, EXTENSION_NAME } from './constant';
+
+import * as fsp from 'fs/promises';
+import * as os from 'os';
+import * as path from 'path';
 
 let client: LanguageClient;
 

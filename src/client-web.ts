@@ -1,9 +1,9 @@
 import { ExtensionContext, Uri } from 'vscode';
-
 import {
     LanguageClient,
     LanguageClientOptions,
 } from 'vscode-languageclient/browser';
+
 import { EXTENSION_ID, EXTENSION_NAME } from './constant';
 
 let client: LanguageClient;
