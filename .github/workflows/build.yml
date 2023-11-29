@@ -26,10 +26,10 @@ jobs:
               working-directory: ./Dagor-Shader-Language-Server
             - name: Generate ANTLR lexer
               run: npx antlr4ts -o "../../src/_generated" "ConditionLexer.g4"
-              working-directory: ./grammar/antlr
+              working-directory: ./Dagor-Shader-Language-Server/grammar/antlr
             - name: Generate ANTLR parser
               run: npx antlr4ts -o "../../src/_generated" -no-listener -visitor "ConditionParser.g4"
-              working-directory: ./grammar/antlr
+              working-directory: ./Dagor-Shader-Language-Server/grammar/antlr
             - name: Build
               run: npm run build
             - name: Build the tests
