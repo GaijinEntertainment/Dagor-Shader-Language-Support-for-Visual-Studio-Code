@@ -97,7 +97,7 @@
         "package-windows-x64": "vsce package --target win32-x64 --ignoreFile vscodeignore/windows.vscodeignore",
         "package-macos-x64": "vsce package --target darwin-x64 --ignoreFile vscodeignore/macos.vscodeignore",
         "package-linux-x64": "vsce package --target linux-x64 --ignoreFile vscodeignore/linux.vscodeignore",
-        "package-all": "start npm run package-universal && start npm run package-windows-x64 && start npm run package-macos-x64 && start npm run package-linux-x64",
+        "package-all": "start npm run package-universal & start npm run package-windows-x64 & start npm run package-macos-x64 & start npm run package-linux-x64",
         "build-tests": "tsc -p ./tsconfig.test.json",
         "watch-tests": "tsc -w -p ./tsconfig.test.json",
         "open-in-browser": "vscode-test-web --extensionDevelopmentPath=. .",

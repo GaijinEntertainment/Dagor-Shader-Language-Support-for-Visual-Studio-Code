@@ -1,5 +1,6 @@
 node_modules
 out
+Dagor-Shader-Language-Server/src/_generated
 .vscode-test
 .vscode-test-web
 
