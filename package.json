@@ -93,7 +93,7 @@
         "build-production": "webpack --mode production",
         "build": "webpack",
         "watch": "webpack --watch",
-        "package-universal": "vsce package",
+        "package-universal": "vsce package --ignoreFile vscodeignore/universal.vscodeignore",
         "package-windows-x64": "vsce package --target win32-x64 --ignoreFile vscodeignore/windows.vscodeignore",
         "package-macos-x64": "vsce package --target darwin-x64 --ignoreFile vscodeignore/macos.vscodeignore",
         "package-linux-x64": "vsce package --target linux-x64 --ignoreFile vscodeignore/linux.vscodeignore",
