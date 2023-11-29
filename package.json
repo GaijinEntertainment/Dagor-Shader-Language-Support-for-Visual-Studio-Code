@@ -28,13 +28,13 @@
     "contributes": {
         "languages": [
             {
-                "id": "dagorsh",
+                "id": "dshl",
                 "aliases": [
                     "Dagor Shader Language",
-                    "dagorsh"
+                    "dshl"
                 ],
                 "extensions": [
-                    "sh"
+                    "dshl"
                 ],
                 "configuration": "./language-configuration.json"
             },
@@ -52,9 +52,9 @@
         ],
         "grammars": [
             {
-                "language": "dagorsh",
-                "scopeName": "source.dagorsh",
-                "path": "./Dagor-Shader-Language-Server/grammar/dagorsh.tmLanguage.json"
+                "language": "dshl",
+                "scopeName": "source.dshl",
+                "path": "./Dagor-Shader-Language-Server/grammar/dshl.tmLanguage.json"
             },
             {
                 "language": "hlsl",
@@ -64,8 +64,8 @@
         ],
         "snippets": [
             {
-                "language": "dagorsh",
-                "path": "./dagorsh-snippets.json"
+                "language": "dshl",
+                "path": "./dshl-snippets.json"
             },
             {
                 "language": "hlsl",

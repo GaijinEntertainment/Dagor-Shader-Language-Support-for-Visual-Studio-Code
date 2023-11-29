@@ -1,6 +1,6 @@
-include "test_inc_1.sh"
-include "test_inc_3.sh"
-include_optional "test_inc_2.sh"
+include "test_inc_1.dshl"
+include "test_inc_3.dshl"
+include_optional "test_inc_2.dshl"
 hlsl {
     #include "test_inc_3.hlsl"
     #include "test_inc_1.hlsl"

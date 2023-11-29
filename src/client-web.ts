@@ -17,7 +17,7 @@ export function activate(context: ExtensionContext) {
     ).toString(true);
 
     const clientOptions: LanguageClientOptions = {
-        documentSelector: [{ language: 'dagorsh' }, { language: 'hlsl' }],
+        documentSelector: [{ language: 'dshl' }, { language: 'hlsl' }],
     };
 
     const worker = new Worker(serverModule);

@@ -6,17 +6,17 @@ import * as vscode from 'vscode';
 
 const shadersFolder = 'include_test_game/prog/shaders';
 
-suite('Document link resolve include directives in .sh files', () => {
+suite('Document link resolve include directives in .dshl files', () => {
     test('should find the included files, based on the include folders', async () => {
-        const uri = getDocumentUri(`${shadersFolder}/test.sh`);
+        const uri = getDocumentUri(`${shadersFolder}/test.dshl`);
         await openDocumentAndAssertLinks(uri, [
-            'test_inc_1.sh', //             include "test_inc_1.sh"
-            'folder_2/test_inc_3.sh', //    include "test_inc_3.sh"
-            'test_inc_2.sh', //             include_optional "test_inc_2.sh"
-            'folder_2/test_inc_3.hlsl', //  #include "test_inc_3.hlsl"
-            'test_inc_1.hlsl', //           #include "test_inc_1.hlsl"
-            'folder_1/test_inc_1.hlsl', //  #include <test_inc_1.hlsl>
-            'test_inc_1.hlsl', //           #include <../test_inc_1.hlsl>
+            'test_inc_1.dshl', //               include "test_inc_1.dshl"
+            'folder_2/test_inc_3.dshl', //      include "test_inc_3.dshl"
+            'test_inc_2.dshl', //               include_optional "test_inc_2.dshl"
+            'folder_2/test_inc_3.hlsl', //      #include "test_inc_3.hlsl"
+            'test_inc_1.hlsl', //               #include "test_inc_1.hlsl"
+            'folder_1/test_inc_1.hlsl', //      #include <test_inc_1.hlsl>
+            'test_inc_1.hlsl', //               #include <../test_inc_1.hlsl>
         ]);
     });
 });
@@ -25,32 +25,35 @@ suite('Document link resolve include directives in .hlsl files', () => {
     test('should find the included files, based on the include folders', async () => {
         const uri = getDocumentUri(`${shadersFolder}/test.hlsl`);
         await openDocumentAndAssertLinks(uri, [
-            'folder_2/test_inc_3.hlsl', //  #include "test_inc_3.hlsl"
-            'test_inc_1.hlsl', //           #include "test_inc_1.hlsl"
-            'folder_1/test_inc_1.hlsl', //  #include <test_inc_1.hlsl>
-            'test_inc_1.hlsl', //           #include <../test_inc_1.hlsl>
+            'folder_2/test_inc_3.hlsl', //      #include "test_inc_3.hlsl"
+            'test_inc_1.hlsl', //               #include "test_inc_1.hlsl"
+            'folder_1/test_inc_1.hlsl', //      #include <test_inc_1.hlsl>
+            'test_inc_1.hlsl', //               #include <../test_inc_1.hlsl>
         ]);
     });
 });
 
-suite('Document link resolve override include directives in .sh files', () => {
-    test('should find the included files, based on the override include folders', async () => {
-        await setShaderConfigOverride(`${shadersFolder}/shaders_other.blk`);
+suite(
+    'Document link resolve override include directives in .dshl files',
+    () => {
+        test('should find the included files, based on the override include folders', async () => {
+            await setShaderConfigOverride(`${shadersFolder}/shaders_other.blk`);
 
-        const uri = getDocumentUri(`${shadersFolder}/test.sh`);
-        await openDocumentAndAssertLinks(uri, [
-            'test_inc_1.sh', //             include "test_inc_1.sh"
-            'folder_2/test_inc_3.sh', //    include "test_inc_3.sh"
-            'test_inc_2.sh', //             include_optional "test_inc_2.sh"
-            'folder_2/test_inc_3.hlsl', //  #include "test_inc_3.hlsl"
-            'test_inc_1.hlsl', //           #include "test_inc_1.hlsl"
-            'test_inc_1.hlsl', //           #include <test_inc_1.hlsl>
-            'test_inc_1.hlsl', //           #include <../test_inc_1.hlsl>
-        ]);
+            const uri = getDocumentUri(`${shadersFolder}/test.dshl`);
+            await openDocumentAndAssertLinks(uri, [
+                'test_inc_1.dshl', //           include "test_inc_1.dshl"
+                'folder_2/test_inc_3.dshl', //  include "test_inc_3.dshl"
+                'test_inc_2.dshl', //           include_optional "test_inc_2.dshl"
+                'folder_2/test_inc_3.hlsl', //  #include "test_inc_3.hlsl"
+                'test_inc_1.hlsl', //           #include "test_inc_1.hlsl"
+                'test_inc_1.hlsl', //           #include <test_inc_1.hlsl>
+                'test_inc_1.hlsl', //           #include <../test_inc_1.hlsl>
+            ]);
 
-        await setShaderConfigOverride('');
-    });
-});
+            await setShaderConfigOverride('');
+        });
+    }
+);
 
 suite('Document link resolve include directives in .hlsl files', () => {
     test('should find the included files, based on the include folders', async () => {

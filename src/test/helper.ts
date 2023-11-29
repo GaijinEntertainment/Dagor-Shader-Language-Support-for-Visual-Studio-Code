@@ -10,7 +10,7 @@ export async function activate(uri: vscode.Uri): Promise<void> {
     const extension = vscode.extensions.getExtension(
         'gaijin.dagor-shader-language-support'
     )!;
-    const languageId = uri.path.endsWith('.sh') ? 'dagorsh' : 'hlsl';
+    const languageId = uri.path.endsWith('.dshl') ? 'dshl' : 'hlsl';
     await extension.activate();
     try {
         document = await vscode.workspace.openTextDocument(uri);
