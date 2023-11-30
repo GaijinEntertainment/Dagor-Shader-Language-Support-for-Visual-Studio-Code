@@ -36,7 +36,7 @@
                 "extensions": [
                     "dshl"
                 ],
-                "configuration": "./language-configuration.json"
+                "configuration": "./Dagor-Shader-Language-Server/grammar/language-configuration.json"
             },
             {
                 "id": "hlsl",
@@ -47,7 +47,7 @@
                 "extensions": [
                     "hlsl"
                 ],
-                "configuration": "./language-configuration.json"
+                "configuration": "./Dagor-Shader-Language-Server/grammar/language-configuration.json"
             }
         ],
         "grammars": [
