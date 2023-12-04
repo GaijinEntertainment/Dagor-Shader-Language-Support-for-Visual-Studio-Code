@@ -25,6 +25,10 @@
     "engines": {
         "vscode": "^1.83.0"
     },
+    "icon": "res/icon.png",
+    "galleryBanner": {
+        "theme": "light"
+    },
     "contributes": {
         "languages": [
             {
@@ -36,7 +40,11 @@
                 "extensions": [
                     "dshl"
                 ],
-                "configuration": "./Dagor-Shader-Language-Server/grammar/language-configuration.json"
+                "configuration": "./Dagor-Shader-Language-Server/grammar/language-configuration.json",
+                "icon": {
+                    "light": "res/dshl-icon.svg",
+                    "dark": "res/dshl-icon.svg"
+                }
             },
             {
                 "id": "hlsl",
@@ -47,7 +55,11 @@
                 "extensions": [
                     "hlsl"
                 ],
-                "configuration": "./Dagor-Shader-Language-Server/grammar/language-configuration.json"
+                "configuration": "./Dagor-Shader-Language-Server/grammar/language-configuration.json",
+                "icon": {
+                    "light": "res/hlsl-icon.svg",
+                    "dark": "res/hlsl-icon.svg"
+                }
             }
         ],
         "grammars": [

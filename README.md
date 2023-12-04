@@ -9,11 +9,13 @@ Dagor Shader Language Support for Visual Studio Code. At the moment it's work in
 -   Syntax highlight
 -   Document links (ctrl + click on #include, include, and include_optional directives)
 -   Comment toggling
--   Bracket coloring
+-   Bracket matching
 -   Auto closing pairs
 -   Surrounding pairs
 -   Folding regions
+-   Indentation
 -   Code snippets
+-   File icons
 
 ## Issues
 
