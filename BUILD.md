@@ -14,7 +14,7 @@ This repository contains 2 versions of the extension: the desktop version can ru
 6.  Clone the repository
 
     ```
-    git clone https://github.com/Gaijin-Games-KFT/Dagor-Shader-Language-Support-for-Visual-Studio-Code.git --recursive
+    git clone https://github.com/GaijinEntertainment/Dagor-Shader-Language-Support-for-Visual-Studio-Code.git --recursive
     ```
 
     Don't forget to use the `--recursive` flag otherwise git won't download the Language Server.

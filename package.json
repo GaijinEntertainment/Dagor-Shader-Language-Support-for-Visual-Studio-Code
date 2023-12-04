@@ -7,10 +7,10 @@
     "license": "BSD-3-Clause",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Gaijin-Games-KFT/Dagor-Shader-Language-Support-for-Visual-Studio-Code"
+        "url": "https://github.com/GaijinEntertainment/Dagor-Shader-Language-Support-for-Visual-Studio-Code"
     },
     "bugs": {
-        "url": "https://github.com/Gaijin-Games-KFT/Dagor-Shader-Language-Support-for-Visual-Studio-Code/issues"
+        "url": "https://github.com/GaijinEntertainment/Dagor-Shader-Language-Support-for-Visual-Studio-Code/issues"
     },
     "categories": [
         "Programming Languages",
