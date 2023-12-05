@@ -143,6 +143,6 @@
         "webpack-cli": "^5.1.4"
     },
     "lint-staged": {
-        "*": "prettier --write --ignore-unknown"
+        "*.{ts,json,yml,md}": "prettier --write --ignore-unknown"
     }
 }
