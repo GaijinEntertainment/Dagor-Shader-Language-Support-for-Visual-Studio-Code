@@ -5,26 +5,26 @@ import * as vscode from 'vscode';
 
 const shadersFolder = 'include_test_game/prog/shaders';
 
-suite('Document link include directives in .sh files', () => {
+suite('Document link include directives in .dshl files', () => {
     test('should find normal includes', async () => {
-        const uri = getDocumentUri(`${shadersFolder}/test.sh`);
+        const uri = getDocumentUri(`${shadersFolder}/test.dshl`);
         await openDocumentAndAssertLinks(uri, [
-            getDocumenLink(getRange(4, 14, 4, 29)), // #include "test_inc_3.hlsl"
-            getDocumenLink(getRange(5, 14, 5, 29)), // #include "test_inc_1.hlsl"
-            getDocumenLink(getRange(6, 14, 6, 29)), // #include <test_inc_1.hlsl>
-            getDocumenLink(getRange(7, 14, 7, 32)), // #include <../test_inc_1.hlsl>
-            getDocumenLink(getRange(0, 9, 0, 22)), // include "test_inc_1.sh"
-            getDocumenLink(getRange(1, 9, 1, 22)), // include "test_inc_3.sh"
-            getDocumenLink(getRange(2, 18, 2, 31)), // include_optional "test_inc_2.sh"
+            getDocumenLink(getRange(0, 9, 0, 24)), //       include "test_inc_1.dshl"
+            getDocumenLink(getRange(1, 9, 1, 24)), //       include "test_inc_3.dshl"
+            getDocumenLink(getRange(2, 18, 2, 33)), //      include_optional "test_inc_2.dshl"
+            getDocumenLink(getRange(4, 14, 4, 29)), //      #include "test_inc_3.hlsl"
+            getDocumenLink(getRange(5, 14, 5, 29)), //      #include "test_inc_1.hlsl"
+            getDocumenLink(getRange(6, 14, 6, 29)), //      #include <test_inc_1.hlsl>
+            getDocumenLink(getRange(7, 14, 7, 32)), //      #include <../test_inc_1.hlsl>
         ]);
     });
 
     test('should find includes with extra spaces and comments', async () => {
-        const uri = getDocumentUri(`${shadersFolder}/test_2.sh`);
+        const uri = getDocumentUri(`${shadersFolder}/test_2.dshl`);
         await openDocumentAndAssertLinks(uri, [
-            getDocumenLink(getRange(1, 9, 1, 22)), //       include "test_inc_1.sh"
-            getDocumenLink(getRange(2, 15, 2, 28)), //         include    "test_inc_2.sh"
-            getDocumenLink(getRange(3, 14, 3, 27)), //      include /**/ "test_inc_3.sh"
+            getDocumenLink(getRange(1, 9, 1, 24)), //       include "test_inc_1.dshl"
+            getDocumenLink(getRange(2, 15, 2, 30)), //         include    "test_inc_2.dshl"
+            getDocumenLink(getRange(3, 14, 3, 29)), //      include /**/ "test_inc_3.dshl"
         ]);
     });
 });

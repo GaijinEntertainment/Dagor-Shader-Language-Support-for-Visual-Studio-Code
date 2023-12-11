@@ -1,0 +1,12 @@
+// includes
+include "test_inc_1.dshl"
+   include    "test_inc_2.dshl"
+include /**/ "test_inc_3.dshl"
+
+// not includes
+
+// include "test_inc_1.dshl"
+/*include "test_inc_1.dshl"*/
+/*
+include "test_inc_1.dshl"
+*/

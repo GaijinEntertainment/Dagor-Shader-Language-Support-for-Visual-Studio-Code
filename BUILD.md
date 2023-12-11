@@ -6,49 +6,58 @@ This repository contains 2 versions of the extension: the desktop version can ru
 
 ## Build, run, and test
 
-1. Download and install Visual Studio Code (<https://code.visualstudio.com/Download>)
-2. Download and install Node.js (<https://nodejs.org/en/download>)
-3. Download and install git (<https://git-scm.com/downloads>)
-4. Open cmd
-5. Clone the repository
+1.  Download and install Visual Studio Code (<https://code.visualstudio.com/Download>)
+2.  Download and install Node.js (<https://nodejs.org/en/download>)
+3.  Download and install git (<https://git-scm.com/downloads>)
+4.  Download and install OpenJDK (<https://learn.microsoft.com/en-us/java/openjdk/download>)
+5.  Open cmd
+6.  Clone the repository
 
     ```
-    git clone https://github.com/Gaijin-Games-KFT/Dagor-Shader-Language-Support-for-Visual-Studio-Code.git --recursive
+    git clone https://github.com/GaijinEntertainment/Dagor-Shader-Language-Support-for-Visual-Studio-Code.git --recursive
     ```
 
     Don't forget to use the `--recursive` flag otherwise git won't download the Language Server.
 
-6. Go inside the repository's root folder
+7.  Go inside the repository's root folder
 
     ```
     cd Dagor-Shader-Language-Support-for-Visual-Studio-Code
     ```
 
-7. Install dependencies
+8.  Install dependencies
 
     ```
     npm install
     ```
 
-8. Go inside the server's folder
+9.  Go inside the server's folder
 
     ```
     cd Dagor-Shader-Language-Server
     ```
 
-9. Install the server's dependencies
+10. Install the server's dependencies
 
     ```
     npm install
     ```
 
-10. Go back to the client's folder
+11. Generate code with ANTLR
+
+    ```
+    npm run generate-antlr
+    ```
+
+    You have to generate code again, every time you change ANTLR grammars in the **Dagor-Shader-Language-Server/grammar/antlr** folder.
+
+12. Go back to the client's folder
 
     ```
     cd ..
     ```
 
-11. Open the client's folder in Visual Studio Code
+13. Open the client's folder in Visual Studio Code
 
     ```
     code .
@@ -56,7 +65,7 @@ This repository contains 2 versions of the extension: the desktop version can ru
 
     When Visual Studio Code opens, it'll suggest you to install the recommanded extensions. They're all useful, but **TypeScript + Webpack Problem Matchers** is required, without it, you won't be able to run the extension.
 
-12. Run the extension, by pressing F5 or choose between the different options in the **Run and Debug** tab:
+14. Run the extension, by pressing F5 or choose between the different options in the **Run and Debug** tab:
 
 -   **Run Desktop Extension**: Builds the desktop extension and runs a new instance of Visual Studio Code where the extension is installed.
 -   **Run Web Extension**: Builds the web extension and runs a new instance of Visual Studio Code where the extension is installed. It basically simulates how the extension would run in the browser. If you want to try it in a real browser, use **open-in-browser** instead.
@@ -67,7 +76,7 @@ This repository contains 2 versions of the extension: the desktop version can ru
 
 ## Package
 
-13. Package the extension
+15. Package the extension
 
     ```
     npm run package-all

@@ -6,6 +6,7 @@
         "redcmd.tmlanguage-syntax-highlighter",
         "amodio.tsl-problem-matcher",
         "dbaeumer.vscode-eslint",
-        "github.vscode-github-actions"
+        "github.vscode-github-actions",
+        "mike-lischke.vscode-antlr4"
     ]
 }

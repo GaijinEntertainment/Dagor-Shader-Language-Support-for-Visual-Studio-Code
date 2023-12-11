@@ -5,6 +5,7 @@
 .vscode-test-web
 node_modules
 out/test
+res/icon.svg
 scripts
 src
 testFixture
@@ -12,10 +13,12 @@ testFixture
 Dagor-Shader-Language-Server/.github
 Dagor-Shader-Language-Server/.husky
 Dagor-Shader-Language-Server/.vscode
+Dagor-Shader-Language-Server/grammar/antlr
 Dagor-Shader-Language-Server/node_modules
 Dagor-Shader-Language-Server/src
 
 **/.editorconfig
+**/.eslintignore
 **/.eslintrc.js
 **/.git
 **/.gitattributes

@@ -91,7 +91,7 @@
 
     "include": {
         "prefix": "include",
-        "body": ["include \"${1:file_name.sh}\""],
+        "body": ["include \"${1:file_name.dshl}\""],
         "description": "Creates an include statement"
     },
     "macro": {

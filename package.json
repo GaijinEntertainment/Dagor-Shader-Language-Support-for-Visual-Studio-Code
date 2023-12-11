@@ -7,10 +7,10 @@
     "license": "BSD-3-Clause",
     "repository": {
         "type": "git",
-        "url": "https://github.com/Gaijin-Games-KFT/Dagor-Shader-Language-Support-for-Visual-Studio-Code"
+        "url": "https://github.com/GaijinEntertainment/Dagor-Shader-Language-Support-for-Visual-Studio-Code"
     },
     "bugs": {
-        "url": "https://github.com/Gaijin-Games-KFT/Dagor-Shader-Language-Support-for-Visual-Studio-Code/issues"
+        "url": "https://github.com/GaijinEntertainment/Dagor-Shader-Language-Support-for-Visual-Studio-Code/issues"
     },
     "categories": [
         "Programming Languages",
@@ -25,18 +25,26 @@
     "engines": {
         "vscode": "^1.83.0"
     },
+    "icon": "res/icon.png",
+    "galleryBanner": {
+        "theme": "light"
+    },
     "contributes": {
         "languages": [
             {
-                "id": "dagorsh",
+                "id": "dshl",
                 "aliases": [
                     "Dagor Shader Language",
-                    "dagorsh"
+                    "dshl"
                 ],
                 "extensions": [
-                    "sh"
+                    "dshl"
                 ],
-                "configuration": "./language-configuration.json"
+                "configuration": "./Dagor-Shader-Language-Server/grammar/language-configuration.json",
+                "icon": {
+                    "light": "res/dshl-icon.svg",
+                    "dark": "res/dshl-icon.svg"
+                }
             },
             {
                 "id": "hlsl",
@@ -47,14 +55,18 @@
                 "extensions": [
                     "hlsl"
                 ],
-                "configuration": "./language-configuration.json"
+                "configuration": "./Dagor-Shader-Language-Server/grammar/language-configuration.json",
+                "icon": {
+                    "light": "res/hlsl-icon.svg",
+                    "dark": "res/hlsl-icon.svg"
+                }
             }
         ],
         "grammars": [
             {
-                "language": "dagorsh",
-                "scopeName": "source.dagorsh",
-                "path": "./Dagor-Shader-Language-Server/grammar/dagorsh.tmLanguage.json"
+                "language": "dshl",
+                "scopeName": "source.dshl",
+                "path": "./Dagor-Shader-Language-Server/grammar/dshl.tmLanguage.json"
             },
             {
                 "language": "hlsl",
@@ -64,8 +76,8 @@
         ],
         "snippets": [
             {
-                "language": "dagorsh",
-                "path": "./dagorsh-snippets.json"
+                "language": "dshl",
+                "path": "./dshl-snippets.json"
             },
             {
                 "language": "hlsl",
@@ -93,11 +105,11 @@
         "build-production": "webpack --mode production",
         "build": "webpack",
         "watch": "webpack --watch",
-        "package-universal": "vsce package",
+        "package-universal": "vsce package --ignoreFile vscodeignore/universal.vscodeignore",
         "package-windows-x64": "vsce package --target win32-x64 --ignoreFile vscodeignore/windows.vscodeignore",
         "package-macos-x64": "vsce package --target darwin-x64 --ignoreFile vscodeignore/macos.vscodeignore",
         "package-linux-x64": "vsce package --target linux-x64 --ignoreFile vscodeignore/linux.vscodeignore",
-        "package-all": "start npm run package-universal && start npm run package-windows-x64 && start npm run package-macos-x64 && start npm run package-linux-x64",
+        "package-all": "start npm run package-universal & start npm run package-windows-x64 & start npm run package-macos-x64 & start npm run package-linux-x64",
         "build-tests": "tsc -p ./tsconfig.test.json",
         "watch-tests": "tsc -w -p ./tsconfig.test.json",
         "open-in-browser": "vscode-test-web --extensionDevelopmentPath=. .",
@@ -111,26 +123,26 @@
         "vscode-languageclient": "^9.0.1"
     },
     "devDependencies": {
-        "@types/mocha": "^10.0.3",
-        "@types/node": "^20.8.6",
+        "@types/mocha": "^10.0.4",
+        "@types/node": "^20.9.2",
         "@types/vscode": "^1.83.0",
-        "@typescript-eslint/eslint-plugin": "^6.8.0",
-        "@typescript-eslint/parser": "^6.8.0",
-        "@vscode/test-electron": "^2.3.5",
+        "@typescript-eslint/eslint-plugin": "^6.11.0",
+        "@typescript-eslint/parser": "^6.11.0",
+        "@vscode/test-electron": "^2.3.6",
         "@vscode/test-web": "^0.0.47",
-        "@vscode/vsce": "^2.21.1",
-        "eslint": "^8.51.0",
+        "@vscode/vsce": "^2.22.0",
+        "eslint": "^8.54.0",
         "husky": "^8.0.3",
-        "lint-staged": "^15.0.1",
+        "lint-staged": "^15.1.0",
         "mocha": "^10.2.0",
-        "prettier": "^3.0.3",
-        "prettier-plugin-organize-imports": "^3.2.3",
-        "ts-loader": "^9.5.0",
+        "prettier": "^3.1.0",
+        "prettier-plugin-organize-imports": "^3.2.4",
+        "ts-loader": "^9.5.1",
         "typescript": "^5.2.2",
         "webpack": "^5.89.0",
         "webpack-cli": "^5.1.4"
     },
     "lint-staged": {
-        "*": "prettier --write --ignore-unknown"
+        "*.{ts,json,yml,md}": "prettier --write --ignore-unknown"
     }
 }

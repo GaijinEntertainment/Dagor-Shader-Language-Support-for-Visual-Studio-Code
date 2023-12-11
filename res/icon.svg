@@ -1,0 +1,8 @@
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+  <defs></defs>
+  <ellipse style="transform-origin: 250px 250px; fill: rgb(42, 147, 214);" cx="250" cy="250" rx="200" ry="200"></ellipse>
+  <ellipse style="transform-origin: 250px 250px; fill: rgb(56, 169, 242);" cx="255.041" cy="250" rx="90" ry="200" transform="matrix(0.642788, -0.766044, 0.766044, 0.642788, -0.000248, 0.000041)"></ellipse>
+  <path style="transform-origin: 595.667px 536px; fill: rgb(56, 169, 242);" transform="matrix(0.437612, -0.521526, 0.521527, 0.437613, -345.667369, -285.999856)" d="M 595.667 242.23 A 293.77 293.77 0 1 1 595.667 829.77 L 595.667 536 Z" bx:shape="pie 595.667 536 0 293.77 0 180 1@17bc7c72"></path>
+  <ellipse style="fill: rgb(255, 255, 255); transform-origin: 250px 250px;" cx="375" cy="250" rx="30" ry="40" transform="matrix(0.642787, -0.766045, 0.766045, 0.642787, 0.000134, -0.000233)"></ellipse>
+  <ellipse style="transform-origin: 250px 250px; fill: none; stroke-width: 5px; stroke: rgb(42, 147, 214);" cx="250" cy="250" rx="200" ry="200"></ellipse>
+</svg>
