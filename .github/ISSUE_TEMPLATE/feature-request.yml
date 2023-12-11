@@ -1,0 +1,16 @@
+name: Request a feature
+description: Request a completely new feature or the enhancement of an already existing feature.
+title: '[Feature]: '
+labels: ['enhancement']
+assignees:
+    - zalan-racz-gaijin
+body:
+    - type: markdown
+      attributes:
+          value: __Please, don't share any information, that is not supposed to be public!
+    - type: textarea
+      id: feature-details
+      attributes:
+          label: Feature details
+      validations:
+          required: true

@@ -1,11 +1,11 @@
 # Change Log
 
-There are no public releases yet.
+## [1.0.0] - 2023.12.11.
 
-## [Unreleased]
+### Added
 
 -   Syntax highlight
--   Document links (ctrl + click on #include, include, and include_optional directives)
+-   Document links
 -   Comment toggling
 -   Bracket matching
 -   Auto closing pairs

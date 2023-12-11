@@ -1,0 +1,14 @@
+name: Other
+description: If you have a question, a suggestion, or anything that is not a bug report and not a feature request.
+assignees:
+    - zalan-racz-gaijin
+body:
+    - type: markdown
+      attributes:
+          value: __Please, don't share any information, that is not supposed to be public!
+    - type: textarea
+      id: content
+      attributes:
+          label: Content
+      validations:
+          required: true
