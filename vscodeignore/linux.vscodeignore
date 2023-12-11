@@ -5,17 +5,10 @@
 .vscode-test-web
 node_modules
 out/test
-res/icon.svg
+res/screenshots
 scripts
 src
 testFixture
-
-Dagor-Shader-Language-Server/.github
-Dagor-Shader-Language-Server/.husky
-Dagor-Shader-Language-Server/.vscode
-Dagor-Shader-Language-Server/grammar/antlr
-Dagor-Shader-Language-Server/node_modules
-Dagor-Shader-Language-Server/src
 
 **/.editorconfig
 **/.eslintignore
@@ -27,6 +20,7 @@ Dagor-Shader-Language-Server/src
 **/.prettierignore
 **/.prettierrc.json
 **/*.vscodeignore
+**/res/icon.svg
 **/BUILD.md
 **/package-lock.json
 **/tsconfig.json
@@ -35,10 +29,18 @@ Dagor-Shader-Language-Server/src
 **/*.ts
 **/*.map
 
+# language server
+
+Dagor-Shader-Language-Server/.github
+Dagor-Shader-Language-Server/.husky
+Dagor-Shader-Language-Server/.vscode
+Dagor-Shader-Language-Server/grammar/antlr
+Dagor-Shader-Language-Server/node_modules
+Dagor-Shader-Language-Server/src
+
 Dagor-Shader-Language-Server/CHANGELOG.md
 Dagor-Shader-Language-Server/README.md
 Dagor-Shader-Language-Server/package.json
-
 
 # platform-specific ignore
 
