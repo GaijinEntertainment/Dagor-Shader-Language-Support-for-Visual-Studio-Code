@@ -74,16 +74,6 @@
                 "path": "./Dagor-Shader-Language-Server/grammar/hlsl.tmLanguage.json"
             }
         ],
-        "snippets": [
-            {
-                "language": "dshl",
-                "path": "./dshl-snippets.json"
-            },
-            {
-                "language": "hlsl",
-                "path": "./hlsl-snippets.json"
-            }
-        ],
         "configuration": [
             {
                 "title": "Dagor Shader Language Support",
