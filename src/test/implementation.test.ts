@@ -10,6 +10,7 @@ import {
     macroWithParametersCursorPosition,
     macroWithParametersDeclaration,
     macroWithWrongNumberOfParametersCursorPosition,
+    macroWithWrongNumberOfParametersDeclaration,
     macroWithoutContentCursorPosition,
     macroWithoutContentDeclaration,
     macroWithoutDefinitionCursorPosition,
@@ -49,7 +50,7 @@ suite('Go to implementation in .dshl files', () => {
         );
         await openDocumentAndAssertImplementation(
             macroWithWrongNumberOfParametersCursorPosition,
-            []
+            getLocationLink(macroWithWrongNumberOfParametersDeclaration)
         );
         await openDocumentAndAssertImplementation(
             optionalMacroCursorPosition,
@@ -74,7 +75,7 @@ suite('Go to implementation in .dshl files', () => {
 async function openDocumentAndAssertImplementation(
     position: vscode.Position,
     expectedItems: vscode.LocationLink[]
-) {
+): Promise<void> {
     const actualItems: vscode.LocationLink[] =
         await vscode.commands.executeCommand(
             'vscode.executeImplementationProvider',

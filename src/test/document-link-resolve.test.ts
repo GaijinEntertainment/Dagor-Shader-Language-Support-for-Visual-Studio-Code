@@ -78,7 +78,7 @@ suite('Document link resolve include directives in .hlsl files', () => {
 async function openDocumentAndAssertLinks(
     uri: vscode.Uri,
     expectedLinks: string[]
-) {
+): Promise<void> {
     await activate(uri);
     const actualLinks: vscode.DocumentLink[] =
         await vscode.commands.executeCommand(

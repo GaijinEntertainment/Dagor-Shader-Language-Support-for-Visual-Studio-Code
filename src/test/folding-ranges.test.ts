@@ -37,7 +37,7 @@ function getFoldingRange(md: MacroDeclaration): vscode.FoldingRange {
 
 async function openDocumentAndAssertFolding(
     expectedItems: vscode.FoldingRange[]
-) {
+): Promise<void> {
     const actualItems: vscode.FoldingRange[] =
         await vscode.commands.executeCommand(
             'vscode.executeFoldingRangeProvider',

@@ -62,7 +62,7 @@ function getSignatureHelp(
 async function openDocumentAndAssertSignatureHelp(
     expectedItem: vscode.SignatureHelp | null,
     position: vscode.Position
-) {
+): Promise<void> {
     const actualItem: vscode.SignatureHelp =
         await vscode.commands.executeCommand(
             'vscode.executeSignatureHelpProvider',

@@ -75,7 +75,7 @@ async function openDocumentAndAssertCompletionItems(
     position: vscode.Position,
     expectedItems: vscode.CompletionItem[],
     notExpectedItems: vscode.CompletionItem[]
-) {
+): Promise<void> {
     const result: vscode.CompletionList = await vscode.commands.executeCommand(
         'vscode.executeCompletionItemProvider',
         uri,

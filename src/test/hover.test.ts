@@ -10,6 +10,7 @@ import {
     macroWithParametersCursorPosition,
     macroWithParametersUsage,
     macroWithWrongNumberOfParametersCursorPosition,
+    macroWithWrongNumberOfParametersUsage,
     macroWithoutContentCursorPosition,
     macroWithoutContentUsage,
     macroWithoutDefinitionCursorPosition,
@@ -49,7 +50,7 @@ suite('Hover in .dshl files', () => {
         );
         await openDocumentAndAssertHovers(
             macroWithWrongNumberOfParametersCursorPosition,
-            []
+            getHover(macroWithWrongNumberOfParametersUsage)
         );
         await openDocumentAndAssertHovers(
             optionalMacroCursorPosition,
@@ -87,7 +88,7 @@ function getHoverContents(macro: string): vscode.MarkedString[] {
 async function openDocumentAndAssertHovers(
     position: vscode.Position,
     expectedItems: vscode.Hover[]
-) {
+): Promise<void> {
     const actualItems: vscode.Hover[] = await vscode.commands.executeCommand(
         'vscode.executeHoverProvider',
         testMacroFileUri,

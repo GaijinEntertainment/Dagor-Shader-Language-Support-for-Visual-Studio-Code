@@ -12,6 +12,8 @@ import {
     macroWithParametersDeclaration,
     macroWithParametersUsage,
     macroWithWrongNumberOfParametersCursorPosition,
+    macroWithWrongNumberOfParametersDeclaration,
+    macroWithWrongNumberOfParametersUsage,
     macroWithoutContentCursorPosition,
     macroWithoutContentDeclaration,
     macroWithoutContentUsage,
@@ -66,7 +68,10 @@ suite('Document highlights in .dshl files', () => {
         );
         await openDocumentAndAssertHighlights(
             macroWithWrongNumberOfParametersCursorPosition,
-            []
+            getDocumentHighlights(
+                macroWithWrongNumberOfParametersUsage,
+                macroWithWrongNumberOfParametersDeclaration
+            )
         );
         await openDocumentAndAssertHighlights(
             optionalMacroCursorPosition,
@@ -109,7 +114,7 @@ function getDocumentHighlights(
 async function openDocumentAndAssertHighlights(
     position: vscode.Position,
     expectedItems: vscode.DocumentHighlight[]
-) {
+): Promise<void> {
     const actualItems: vscode.DocumentHighlight[] =
         await vscode.commands.executeCommand(
             'vscode.executeDocumentHighlights',

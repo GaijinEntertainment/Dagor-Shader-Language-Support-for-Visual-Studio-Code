@@ -40,7 +40,7 @@ function getDocumentSymbol(md: MacroDeclaration): vscode.DocumentSymbol {
 
 async function openDocumentAndAssertDocumentSymbols(
     expectedItems: vscode.DocumentSymbol[]
-) {
+): Promise<void> {
     const actualItems: vscode.DocumentSymbol[] =
         await vscode.commands.executeCommand(
             'vscode.executeDocumentSymbolProvider',

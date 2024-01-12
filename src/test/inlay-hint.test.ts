@@ -5,6 +5,7 @@ import { activate } from './helper';
 import {
     MacroUsage,
     macroWithParametersUsage,
+    macroWithWrongNumberOfParametersUsage,
     strangeMacroUsage,
     testMacroFileUri,
 } from './macro-helper';
@@ -14,6 +15,7 @@ suite('Inlay hints in .dshl files', () => {
         await activate(testMacroFileUri);
         await openDocumentAndAssertInlayHints([
             ...getInlayHints(macroWithParametersUsage),
+            ...getInlayHints(macroWithWrongNumberOfParametersUsage),
             ...getInlayHints(strangeMacroUsage),
         ]);
     });
@@ -30,7 +32,7 @@ function getInlayHints(mu: MacroUsage): vscode.InlayHint[] {
 
 async function openDocumentAndAssertInlayHints(
     expectedItems: vscode.InlayHint[]
-) {
+): Promise<void> {
     const wholeFileRange = new vscode.Range(0, 0, 36, 0);
     const actualItems: vscode.InlayHint[] =
         await vscode.commands.executeCommand(
