@@ -90,10 +90,17 @@
                 "properties": {
                     "dagorShaderLanguageServer.shaderConfigOverride": {
                         "type": "string",
+                        "order": 0,
                         "default": "",
                         "pattern": ".*?shaders_(.*?)\\.blk|^$",
                         "patternErrorMessage": "The shader config file's name has to be shaders_<CONFIG>.blk.",
                         "markdownDescription": " Shader configs are .blk files, usually located in the games' `prog/shaders` folders, and they determine include folders. For example: `samples/testGI/prog/shaders/shaders_dx12.blk`. If you want to override the extension's automatic shader config selection, provide the shader config's path here. Leaving it empty enables the automatic selection based on game, platform, and driver in launch options."
+                    },
+                    "dagorShaderLanguageServer.folding": {
+                        "type": "boolean",
+                        "order": 1,
+                        "default": false,
+                        "description": "Enables/disables the language server's code folding. If disabled, VS Code's built-in code folding will be used instead."
                     }
                 }
             }

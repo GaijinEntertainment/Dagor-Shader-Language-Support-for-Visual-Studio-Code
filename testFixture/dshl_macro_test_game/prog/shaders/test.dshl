@@ -1,0 +1,35 @@
+include "test_2.dshl"
+
+// comment to make sure
+// offsets are correct
+
+macro TEST_MACRO()
+    int i;
+endmacro
+
+macro MACRO_WITHOUT_CONTENT()
+endmacro
+
+macro MACRO_WITH_PARAMETERS(a, b, c)
+    int j;
+endmacro
+
+macro MACRO_WITH_WRONG_NUMBER_OF_PARAMETERS(a)
+    int k;
+endmacro
+
+define_macro_if_not_defined OPTIONAL_MACRO()
+    int l;
+endmacro
+
+  macro    STRANGE_MACRO  (  a,b /*evil comment*/   ,c,  )   //another comment
+endmacro
+
+TEST_MACRO()
+MACRO_WITHOUT_CONTENT()
+MACRO_WITH_PARAMETERS(x, y, z)
+MACRO_WITH_WRONG_NUMBER_OF_PARAMETERS()
+OPTIONAL_MACRO()
+MACRO_WITHOUT_DEFINITION()
+STRANGE_MACRO(  x , y,z )
+MACRO_FROM_ANOTHER_FILE()

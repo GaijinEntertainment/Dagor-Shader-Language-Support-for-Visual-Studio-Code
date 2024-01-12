@@ -1,7 +1,7 @@
-import { activate, getDocumenLink, getDocumentUri, getRange } from './helper';
-
 import * as assert from 'assert';
 import * as vscode from 'vscode';
+
+import { activate, getDocumenLink, getDocumentUri, getRange } from './helper';
 
 const shadersFolder = 'include_test_game/prog/shaders';
 
