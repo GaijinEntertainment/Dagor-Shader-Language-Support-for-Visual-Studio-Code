@@ -1,0 +1,3 @@
+macro MACRO_FROM_ANOTHER_FILE()
+    int x;
+endmacro

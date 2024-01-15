@@ -7,7 +7,7 @@ assignees:
 body:
     - type: markdown
       attributes:
-          value: __Please, don't share any information, that is not supposed to be public!
+          value: __Please, don't share any information, that is not supposed to be public!__
     - type: textarea
       id: feature-details
       attributes:

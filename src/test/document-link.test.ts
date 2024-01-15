@@ -1,7 +1,7 @@
-import { activate, getDocumenLink, getDocumentUri, getRange } from './helper';
-
 import * as assert from 'assert';
 import * as vscode from 'vscode';
+
+import { activate, getDocumenLink, getDocumentUri, getRange } from './helper';
 
 const shadersFolder = 'include_test_game/prog/shaders';
 
@@ -53,7 +53,7 @@ suite('Document link include directives in .hlsl files', () => {
 async function openDocumentAndAssertLinks(
     uri: vscode.Uri,
     expectedLinks: vscode.DocumentLink[]
-) {
+): Promise<void> {
     await activate(uri);
     const actualLinks: vscode.DocumentLink[] =
         await vscode.commands.executeCommand('vscode.executeLinkProvider', uri);

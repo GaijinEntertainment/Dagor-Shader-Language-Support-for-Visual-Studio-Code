@@ -1,13 +1,15 @@
-import { activate, getDocumentUri } from './helper';
-
 import * as assert from 'assert';
 import * as path from 'path';
 import * as vscode from 'vscode';
+
+import { activate, getDocumentUri } from './helper';
 
 const shadersFolder = 'include_test_game/prog/shaders';
 
 suite('Document link resolve include directives in .dshl files', () => {
     test('should find the included files, based on the include folders', async () => {
+        await setShaderConfigOverride(`${shadersFolder}/shaders_dx12.blk`);
+
         const uri = getDocumentUri(`${shadersFolder}/test.dshl`);
         await openDocumentAndAssertLinks(uri, [
             'test_inc_1.dshl', //               include "test_inc_1.dshl"
@@ -23,6 +25,8 @@ suite('Document link resolve include directives in .dshl files', () => {
 
 suite('Document link resolve include directives in .hlsl files', () => {
     test('should find the included files, based on the include folders', async () => {
+        await setShaderConfigOverride(`${shadersFolder}/shaders_dx12.blk`);
+
         const uri = getDocumentUri(`${shadersFolder}/test.hlsl`);
         await openDocumentAndAssertLinks(uri, [
             'folder_2/test_inc_3.hlsl', //      #include "test_inc_3.hlsl"
@@ -56,7 +60,7 @@ suite(
 );
 
 suite('Document link resolve include directives in .hlsl files', () => {
-    test('should find the included files, based on the include folders', async () => {
+    test('should find the included files, based on the override include folders', async () => {
         await setShaderConfigOverride(`${shadersFolder}/shaders_other.blk`);
 
         const uri = getDocumentUri(`${shadersFolder}/test.hlsl`);
@@ -74,7 +78,7 @@ suite('Document link resolve include directives in .hlsl files', () => {
 async function openDocumentAndAssertLinks(
     uri: vscode.Uri,
     expectedLinks: string[]
-) {
+): Promise<void> {
     await activate(uri);
     const actualLinks: vscode.DocumentLink[] =
         await vscode.commands.executeCommand(

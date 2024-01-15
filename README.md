@@ -1,5 +1,6 @@
 # Dagor Shader Language Support
 
+[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/gaijin.dagor-shader-language-support?color=44cc11)](https://marketplace.visualstudio.com/items?itemName=gaijin.dagor-shader-language-support)
 [![build](https://github.com/GaijinEntertainment/Dagor-Shader-Language-Support-for-Visual-Studio-Code/actions/workflows/build.yml/badge.svg)](https://github.com/GaijinEntertainment/Dagor-Shader-Language-Support-for-Visual-Studio-Code/actions/workflows/build.yml)
 
 Dagor Shader Language Support for Visual Studio Code. If you're not on x64 architecture, you have to install Node.js in order to use the extension.
