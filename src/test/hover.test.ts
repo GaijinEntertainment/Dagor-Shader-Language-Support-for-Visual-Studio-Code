@@ -28,46 +28,19 @@ import {
 suite('Hover in .dshl files', () => {
     test('should display hover over DSHL macro calls', async () => {
         await activate(testMacroFileUri);
-        await openDocumentAndAssertHovers(
-            testMacroCursorPosition,
-            getHover(testMacroUsage)
-        );
-        await openDocumentAndAssertHovers(
-            testMacroStartCursorPosition,
-            getHover(testMacroUsage)
-        );
-        await openDocumentAndAssertHovers(
-            testMacroEndCursorPosition,
-            getHover(testMacroUsage)
-        );
-        await openDocumentAndAssertHovers(
-            macroWithoutContentCursorPosition,
-            getHover(macroWithoutContentUsage)
-        );
-        await openDocumentAndAssertHovers(
-            macroWithParametersCursorPosition,
-            getHover(macroWithParametersUsage)
-        );
+        await openDocumentAndAssertHovers(testMacroCursorPosition, getHover(testMacroUsage));
+        await openDocumentAndAssertHovers(testMacroStartCursorPosition, getHover(testMacroUsage));
+        await openDocumentAndAssertHovers(testMacroEndCursorPosition, getHover(testMacroUsage));
+        await openDocumentAndAssertHovers(macroWithoutContentCursorPosition, getHover(macroWithoutContentUsage));
+        await openDocumentAndAssertHovers(macroWithParametersCursorPosition, getHover(macroWithParametersUsage));
         await openDocumentAndAssertHovers(
             macroWithWrongNumberOfParametersCursorPosition,
             getHover(macroWithWrongNumberOfParametersUsage)
         );
-        await openDocumentAndAssertHovers(
-            optionalMacroCursorPosition,
-            getHover(optionalMacroUsage)
-        );
-        await openDocumentAndAssertHovers(
-            macroWithoutDefinitionCursorPosition,
-            []
-        );
-        await openDocumentAndAssertHovers(
-            strangeMacroCursorPosition,
-            getHover(strangeMacroUsage)
-        );
-        await openDocumentAndAssertHovers(
-            macroFromAnotherFileCursorPosition,
-            getHover(macroFromAnotherFileUsage)
-        );
+        await openDocumentAndAssertHovers(optionalMacroCursorPosition, getHover(optionalMacroUsage));
+        await openDocumentAndAssertHovers(macroWithoutDefinitionCursorPosition, []);
+        await openDocumentAndAssertHovers(strangeMacroCursorPosition, getHover(strangeMacroUsage));
+        await openDocumentAndAssertHovers(macroFromAnotherFileCursorPosition, getHover(macroFromAnotherFileUsage));
         await openDocumentAndAssertHovers(emptyPlaceCursorPosition, []);
     });
 });
@@ -85,10 +58,7 @@ function getHoverContents(macro: string): vscode.MarkedString[] {
     return [{ value: `\`\`\`dshl\n${macro}\n\`\`\``, language: 'dshl' }];
 }
 
-async function openDocumentAndAssertHovers(
-    position: vscode.Position,
-    expectedItems: vscode.Hover[]
-): Promise<void> {
+async function openDocumentAndAssertHovers(position: vscode.Position, expectedItems: vscode.Hover[]): Promise<void> {
     const actualItems: vscode.Hover[] = await vscode.commands.executeCommand(
         'vscode.executeHoverProvider',
         testMacroFileUri,
@@ -97,10 +67,7 @@ async function openDocumentAndAssertHovers(
     assert.equal(expectedItems.length, actualItems.length);
     expectedItems.forEach((expectedItem, i) => {
         const actualItem = actualItems[i];
-        assert.equal(
-            expectedItem.contents[0]['value'],
-            actualItem.contents[0]['value']
-        );
+        assert.equal(expectedItem.contents[0]['value'], actualItem.contents[0]['value']);
         assert.ok(expectedItem.range?.isEqual(actualItem.range!));
     });
 }

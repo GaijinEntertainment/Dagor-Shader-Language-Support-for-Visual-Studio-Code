@@ -1,10 +1,5 @@
 import { ExtensionContext, ExtensionMode } from 'vscode';
-import {
-    LanguageClient,
-    LanguageClientOptions,
-    ServerOptions,
-    TransportKind,
-} from 'vscode-languageclient/node';
+import { LanguageClient, LanguageClientOptions, ServerOptions, TransportKind } from 'vscode-languageclient/node';
 
 import { EXTENSION_ID, EXTENSION_NAME } from './constant';
 
@@ -19,12 +14,7 @@ export async function activate(context: ExtensionContext): Promise<void> {
     const clientOptions: LanguageClientOptions = {
         documentSelector: [{ language: 'dshl' }, { language: 'hlsl' }],
     };
-    client = new LanguageClient(
-        EXTENSION_ID,
-        EXTENSION_NAME,
-        serverOptions,
-        clientOptions
-    );
+    client = new LanguageClient(EXTENSION_ID, EXTENSION_NAME, serverOptions, clientOptions);
 
     client.start();
 }
@@ -33,13 +23,8 @@ export function deactivate(): Thenable<void> | undefined {
     return client?.stop();
 }
 
-async function getServerOptions(
-    context: ExtensionContext
-): Promise<ServerOptions> {
-    if (
-        context.extensionMode === ExtensionMode.Production &&
-        isExecutableAvailable()
-    ) {
+async function getServerOptions(context: ExtensionContext): Promise<ServerOptions> {
+    if (context.extensionMode === ExtensionMode.Production && isExecutableAvailable()) {
         const executablePath = getExecutablePath(context);
         const executable = await makeFileExecutableIfNeeded(executablePath);
         if (executable) {
@@ -51,18 +36,13 @@ async function getServerOptions(
 
 function isExecutableAvailable(): boolean {
     return (
-        (os.platform() === 'win32' ||
-            os.platform() === 'linux' ||
-            os.platform() === 'darwin') &&
-        os.arch() === 'x64'
+        (os.platform() === 'win32' || os.platform() === 'linux' || os.platform() === 'darwin') && os.arch() === 'x64'
     );
 }
 
 function getExecutablePath(context: ExtensionContext): string {
     const fileName = getExecutableFileName();
-    return context.asAbsolutePath(
-        path.join('Dagor-Shader-Language-Server', 'bin', fileName)
-    );
+    return context.asAbsolutePath(path.join('Dagor-Shader-Language-Server', 'bin', fileName));
 }
 
 function getExecutableFileName(): string {
@@ -98,9 +78,7 @@ async function makeFileExecutableIfNeeded(file: string): Promise<boolean> {
 }
 
 function getNodeJsServerOptions(context: ExtensionContext): ServerOptions {
-    const serverModule = context.asAbsolutePath(
-        path.join('Dagor-Shader-Language-Server', 'out', 'server-desktop.js')
-    );
+    const serverModule = context.asAbsolutePath(path.join('Dagor-Shader-Language-Server', 'out', 'server-desktop.js'));
     return {
         run: {
             module: serverModule,

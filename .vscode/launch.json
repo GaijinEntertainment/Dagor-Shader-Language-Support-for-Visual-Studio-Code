@@ -19,10 +19,7 @@
             "type": "extensionHost",
             "request": "launch",
             "debugWebWorkerHost": true,
-            "args": [
-                "--extensionDevelopmentPath=${workspaceFolder}",
-                "--extensionDevelopmentKind=web"
-            ],
+            "args": ["--extensionDevelopmentPath=${workspaceFolder}", "--extensionDevelopmentKind=web"],
             "outFiles": ["${workspaceFolder}/out/**/*.js"],
             "preLaunchTask": {
                 "type": "npm",
@@ -36,9 +33,7 @@
             "port": 6009,
             "restart": true,
             "sourceMaps": true,
-            "outFiles": [
-                "${workspaceFolder}/Dagor-Shader-Language-Server/out/**/*.js"
-            ]
+            "outFiles": ["${workspaceFolder}/Dagor-Shader-Language-Server/out/**/*.js"]
         },
         {
             "name": "Run E2E Tests",

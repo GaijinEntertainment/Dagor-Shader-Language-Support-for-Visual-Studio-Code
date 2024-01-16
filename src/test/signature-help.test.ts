@@ -34,17 +34,11 @@ suite('Signature help in .dshl files', () => {
             new vscode.Position(29, 26)
         );
         await openDocumentAndAssertSignatureHelp(null, testMacroCursorPosition);
-        await openDocumentAndAssertSignatureHelp(
-            null,
-            emptyPlaceCursorPosition
-        );
+        await openDocumentAndAssertSignatureHelp(null, emptyPlaceCursorPosition);
     });
 });
 
-function getSignatureHelp(
-    mu: MacroUsage,
-    activeParameter: number
-): vscode.SignatureHelp {
+function getSignatureHelp(mu: MacroUsage, activeParameter: number): vscode.SignatureHelp {
     return {
         activeParameter,
         activeSignature: 0,
@@ -63,12 +57,11 @@ async function openDocumentAndAssertSignatureHelp(
     expectedItem: vscode.SignatureHelp | null,
     position: vscode.Position
 ): Promise<void> {
-    const actualItem: vscode.SignatureHelp =
-        await vscode.commands.executeCommand(
-            'vscode.executeSignatureHelpProvider',
-            testMacroFileUri,
-            position
-        );
+    const actualItem: vscode.SignatureHelp = await vscode.commands.executeCommand(
+        'vscode.executeSignatureHelpProvider',
+        testMacroFileUri,
+        position
+    );
     if (!expectedItem) {
         assert.equal(expectedItem, actualItem);
         return;

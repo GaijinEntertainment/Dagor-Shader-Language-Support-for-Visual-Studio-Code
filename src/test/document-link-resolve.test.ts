@@ -37,27 +37,24 @@ suite('Document link resolve include directives in .hlsl files', () => {
     });
 });
 
-suite(
-    'Document link resolve override include directives in .dshl files',
-    () => {
-        test('should find the included files, based on the override include folders', async () => {
-            await setShaderConfigOverride(`${shadersFolder}/shaders_other.blk`);
+suite('Document link resolve override include directives in .dshl files', () => {
+    test('should find the included files, based on the override include folders', async () => {
+        await setShaderConfigOverride(`${shadersFolder}/shaders_other.blk`);
 
-            const uri = getDocumentUri(`${shadersFolder}/test.dshl`);
-            await openDocumentAndAssertLinks(uri, [
-                'test_inc_1.dshl', //           include "test_inc_1.dshl"
-                'folder_2/test_inc_3.dshl', //  include "test_inc_3.dshl"
-                'test_inc_2.dshl', //           include_optional "test_inc_2.dshl"
-                'folder_2/test_inc_3.hlsl', //  #include "test_inc_3.hlsl"
-                'test_inc_1.hlsl', //           #include "test_inc_1.hlsl"
-                'test_inc_1.hlsl', //           #include <test_inc_1.hlsl>
-                'test_inc_1.hlsl', //           #include <../test_inc_1.hlsl>
-            ]);
+        const uri = getDocumentUri(`${shadersFolder}/test.dshl`);
+        await openDocumentAndAssertLinks(uri, [
+            'test_inc_1.dshl', //           include "test_inc_1.dshl"
+            'folder_2/test_inc_3.dshl', //  include "test_inc_3.dshl"
+            'test_inc_2.dshl', //           include_optional "test_inc_2.dshl"
+            'folder_2/test_inc_3.hlsl', //  #include "test_inc_3.hlsl"
+            'test_inc_1.hlsl', //           #include "test_inc_1.hlsl"
+            'test_inc_1.hlsl', //           #include <test_inc_1.hlsl>
+            'test_inc_1.hlsl', //           #include <../test_inc_1.hlsl>
+        ]);
 
-            await setShaderConfigOverride('');
-        });
-    }
-);
+        await setShaderConfigOverride('');
+    });
+});
 
 suite('Document link resolve include directives in .hlsl files', () => {
     test('should find the included files, based on the override include folders', async () => {
@@ -75,17 +72,13 @@ suite('Document link resolve include directives in .hlsl files', () => {
     });
 });
 
-async function openDocumentAndAssertLinks(
-    uri: vscode.Uri,
-    expectedLinks: string[]
-): Promise<void> {
+async function openDocumentAndAssertLinks(uri: vscode.Uri, expectedLinks: string[]): Promise<void> {
     await activate(uri);
-    const actualLinks: vscode.DocumentLink[] =
-        await vscode.commands.executeCommand(
-            'vscode.executeLinkProvider',
-            uri,
-            expectedLinks.length
-        );
+    const actualLinks: vscode.DocumentLink[] = await vscode.commands.executeCommand(
+        'vscode.executeLinkProvider',
+        uri,
+        expectedLinks.length
+    );
 
     assert.ok(actualLinks.length === expectedLinks.length);
     expectedLinks.forEach((expectedLink, i) => {
@@ -96,7 +89,5 @@ async function openDocumentAndAssertLinks(
 }
 
 async function setShaderConfigOverride(value: string): Promise<void> {
-    await vscode.workspace
-        .getConfiguration('dagorShaderLanguageServer')
-        .update('shaderConfigOverride', value);
+    await vscode.workspace.getConfiguration('dagorShaderLanguageServer').update('shaderConfigOverride', value);
 }

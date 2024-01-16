@@ -28,18 +28,9 @@ import {
 suite('Go to definition in .dshl files', () => {
     test('should go to DSHL macro definitions', async () => {
         await activate(testMacroFileUri);
-        await openDocumentAndAssertDefinition(
-            testMacroCursorPosition,
-            getLocationLink(testMacroDeclaration)
-        );
-        await openDocumentAndAssertDefinition(
-            testMacroStartCursorPosition,
-            getLocationLink(testMacroDeclaration)
-        );
-        await openDocumentAndAssertDefinition(
-            testMacroEndCursorPosition,
-            getLocationLink(testMacroDeclaration)
-        );
+        await openDocumentAndAssertDefinition(testMacroCursorPosition, getLocationLink(testMacroDeclaration));
+        await openDocumentAndAssertDefinition(testMacroStartCursorPosition, getLocationLink(testMacroDeclaration));
+        await openDocumentAndAssertDefinition(testMacroEndCursorPosition, getLocationLink(testMacroDeclaration));
         await openDocumentAndAssertDefinition(
             macroWithoutContentCursorPosition,
             getLocationLink(macroWithoutContentDeclaration)
@@ -52,18 +43,9 @@ suite('Go to definition in .dshl files', () => {
             macroWithWrongNumberOfParametersCursorPosition,
             getLocationLink(macroWithWrongNumberOfParametersDeclaration)
         );
-        await openDocumentAndAssertDefinition(
-            optionalMacroCursorPosition,
-            getLocationLink(optionalMacroDeclaration)
-        );
-        await openDocumentAndAssertDefinition(
-            macroWithoutDefinitionCursorPosition,
-            []
-        );
-        await openDocumentAndAssertDefinition(
-            strangeMacroCursorPosition,
-            getLocationLink(strangeMacroDeclaration)
-        );
+        await openDocumentAndAssertDefinition(optionalMacroCursorPosition, getLocationLink(optionalMacroDeclaration));
+        await openDocumentAndAssertDefinition(macroWithoutDefinitionCursorPosition, []);
+        await openDocumentAndAssertDefinition(strangeMacroCursorPosition, getLocationLink(strangeMacroDeclaration));
         await openDocumentAndAssertDefinition(
             macroFromAnotherFileCursorPosition,
             getLocationLink(macroFromAnotherFileDeclaration)
@@ -76,28 +58,17 @@ async function openDocumentAndAssertDefinition(
     position: vscode.Position,
     expectedItems: vscode.LocationLink[]
 ): Promise<void> {
-    const actualItems: vscode.LocationLink[] =
-        await vscode.commands.executeCommand(
-            'vscode.executeDefinitionProvider',
-            testMacroFileUri,
-            position
-        );
+    const actualItems: vscode.LocationLink[] = await vscode.commands.executeCommand(
+        'vscode.executeDefinitionProvider',
+        testMacroFileUri,
+        position
+    );
     assert.equal(expectedItems.length, actualItems.length);
     expectedItems.forEach((expectedItem, i) => {
         const actualItem = actualItems[i];
-        assert.equal(
-            expectedItem.targetUri.fsPath,
-            actualItem.targetUri.fsPath
-        );
+        assert.equal(expectedItem.targetUri.fsPath, actualItem.targetUri.fsPath);
         assert.ok(expectedItem.targetRange?.isEqual(actualItem.targetRange!));
-        assert.ok(
-            expectedItem.targetSelectionRange?.isEqual(
-                actualItem.targetSelectionRange!
-            )
-        );
-        assert.equal(
-            expectedItem.originSelectionRange,
-            actualItem.originSelectionRange
-        );
+        assert.ok(expectedItem.targetSelectionRange?.isEqual(actualItem.targetSelectionRange!));
+        assert.equal(expectedItem.originSelectionRange, actualItem.originSelectionRange);
     });
 }

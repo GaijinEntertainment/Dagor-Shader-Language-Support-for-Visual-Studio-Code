@@ -50,13 +50,9 @@ suite('Document link include directives in .hlsl files', () => {
     });
 });
 
-async function openDocumentAndAssertLinks(
-    uri: vscode.Uri,
-    expectedLinks: vscode.DocumentLink[]
-): Promise<void> {
+async function openDocumentAndAssertLinks(uri: vscode.Uri, expectedLinks: vscode.DocumentLink[]): Promise<void> {
     await activate(uri);
-    const actualLinks: vscode.DocumentLink[] =
-        await vscode.commands.executeCommand('vscode.executeLinkProvider', uri);
+    const actualLinks: vscode.DocumentLink[] = await vscode.commands.executeCommand('vscode.executeLinkProvider', uri);
 
     assert.ok(actualLinks.length === expectedLinks.length);
     expectedLinks.forEach((expectedItem, i) => {

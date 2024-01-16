@@ -39,14 +39,11 @@ function getFoldingRange(md: MacroDeclaration): vscode.FoldingRange {
     };
 }
 
-async function openDocumentAndAssertFolding(
-    expectedItems: vscode.FoldingRange[]
-): Promise<void> {
-    const actualItems: vscode.FoldingRange[] =
-        await vscode.commands.executeCommand(
-            'vscode.executeFoldingRangeProvider',
-            testMacroFileUri
-        );
+async function openDocumentAndAssertFolding(expectedItems: vscode.FoldingRange[]): Promise<void> {
+    const actualItems: vscode.FoldingRange[] = await vscode.commands.executeCommand(
+        'vscode.executeFoldingRangeProvider',
+        testMacroFileUri
+    );
     assert.equal(expectedItems.length, actualItems.length);
     expectedItems.forEach((expectedItem, i) => {
         const actualItem = actualItems[i];

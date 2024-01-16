@@ -30,16 +30,13 @@ function getInlayHints(mu: MacroUsage): vscode.InlayHint[] {
     }));
 }
 
-async function openDocumentAndAssertInlayHints(
-    expectedItems: vscode.InlayHint[]
-): Promise<void> {
+async function openDocumentAndAssertInlayHints(expectedItems: vscode.InlayHint[]): Promise<void> {
     const wholeFileRange = new vscode.Range(0, 0, 36, 0);
-    const actualItems: vscode.InlayHint[] =
-        await vscode.commands.executeCommand(
-            'vscode.executeInlayHintProvider',
-            testMacroFileUri,
-            wholeFileRange
-        );
+    const actualItems: vscode.InlayHint[] = await vscode.commands.executeCommand(
+        'vscode.executeInlayHintProvider',
+        testMacroFileUri,
+        wholeFileRange
+    );
     assert.equal(expectedItems.length, actualItems.length);
     expectedItems.forEach((expectedItem, i) => {
         const actualItem = actualItems[i];

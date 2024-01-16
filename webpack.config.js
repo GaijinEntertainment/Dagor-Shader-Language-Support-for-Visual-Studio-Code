@@ -80,10 +80,5 @@ const clientDesktopConfig = {
 
 module.exports = (_env, argv) => {
     const [serverDesktopConfig, serverWebConfig] = getServerConfigs(_env, argv);
-    return [
-        clientDesktopConfig,
-        clientWebConfig,
-        serverDesktopConfig,
-        serverWebConfig,
-    ];
+    return [clientDesktopConfig, clientWebConfig, serverDesktopConfig, serverWebConfig];
 };

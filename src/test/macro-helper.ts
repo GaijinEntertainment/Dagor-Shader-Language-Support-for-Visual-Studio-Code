@@ -21,9 +21,7 @@ export type MacroArgument = {
     position: vscode.Position;
 };
 
-export const testMacroFileUri = getDocumentUri(
-    'dshl_macro_test_game/prog/shaders/test.dshl'
-);
+export const testMacroFileUri = getDocumentUri('dshl_macro_test_game/prog/shaders/test.dshl');
 
 export const testMacroDeclaration: MacroDeclaration = {
     name: 'TEST_MACRO',
@@ -90,8 +88,7 @@ export const macroWithWrongNumberOfParametersUsage: MacroUsage = {
     parameters: [],
     nameRange: new vscode.Range(30, 0, 30, 37),
 };
-export const macroWithWrongNumberOfParametersCursorPosition =
-    new vscode.Position(30, 10);
+export const macroWithWrongNumberOfParametersCursorPosition = new vscode.Position(30, 10);
 
 export const optionalMacroDeclaration: MacroDeclaration = {
     name: 'OPTIONAL_MACRO',
