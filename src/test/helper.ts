@@ -7,9 +7,7 @@ export let documentEol: string;
 export let platformEol: string;
 
 export async function activate(uri: vscode.Uri): Promise<void> {
-    const extension = vscode.extensions.getExtension(
-        'gaijin.dagor-shader-language-support'
-    )!;
+    const extension = vscode.extensions.getExtension('gaijin.dagor-shader-language-support')!;
     const languageId = uri.path.endsWith('.dshl') ? 'dshl' : 'hlsl';
     await extension.activate();
     try {

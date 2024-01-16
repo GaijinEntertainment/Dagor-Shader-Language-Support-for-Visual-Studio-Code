@@ -25,10 +25,7 @@
                 "panel": "dedicated",
                 "reveal": "never"
             },
-            "problemMatcher": [
-                "$ts-webpack-watch",
-                "$ts-checker-eslint-webpack-watch"
-            ]
+            "problemMatcher": ["$ts-webpack-watch", "$ts-checker-eslint-webpack-watch"]
         },
         {
             "label": "Build Tests",

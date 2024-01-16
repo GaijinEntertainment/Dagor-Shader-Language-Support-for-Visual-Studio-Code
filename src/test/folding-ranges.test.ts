@@ -13,10 +13,7 @@ import {
     testMacroFileUri,
 } from './macro-helper';
 
-// TODO
-// It seems that the in CI, VS Code uses the default, indentation-based folding provider, instead of our folding provider.
-// The editor.foldingStrategy configuration's value is auto, so it shouldn't fallback to the default provider.
-// I have no idea why, so until I figure it out, I'm skipping this test.
+// TODO: re-enable this test when the provider finds all ranges
 suite.skip('Folding ranges in .dshl files', () => {
     test('should create folding ranges for the DSHL macro declarations', async () => {
         await activate(testMacroFileUri);
@@ -39,14 +36,11 @@ function getFoldingRange(md: MacroDeclaration): vscode.FoldingRange {
     };
 }
 
-async function openDocumentAndAssertFolding(
-    expectedItems: vscode.FoldingRange[]
-): Promise<void> {
-    const actualItems: vscode.FoldingRange[] =
-        await vscode.commands.executeCommand(
-            'vscode.executeFoldingRangeProvider',
-            testMacroFileUri
-        );
+async function openDocumentAndAssertFolding(expectedItems: vscode.FoldingRange[]): Promise<void> {
+    const actualItems: vscode.FoldingRange[] = await vscode.commands.executeCommand(
+        'vscode.executeFoldingRangeProvider',
+        testMacroFileUri
+    );
     assert.equal(expectedItems.length, actualItems.length);
     expectedItems.forEach((expectedItem, i) => {
         const actualItem = actualItems[i];

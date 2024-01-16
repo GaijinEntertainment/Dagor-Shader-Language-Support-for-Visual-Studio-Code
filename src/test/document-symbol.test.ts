@@ -38,23 +38,18 @@ function getDocumentSymbol(md: MacroDeclaration): vscode.DocumentSymbol {
     };
 }
 
-async function openDocumentAndAssertDocumentSymbols(
-    expectedItems: vscode.DocumentSymbol[]
-): Promise<void> {
-    const actualItems: vscode.DocumentSymbol[] =
-        await vscode.commands.executeCommand(
-            'vscode.executeDocumentSymbolProvider',
-            testMacroFileUri
-        );
+async function openDocumentAndAssertDocumentSymbols(expectedItems: vscode.DocumentSymbol[]): Promise<void> {
+    const actualItems: vscode.DocumentSymbol[] = await vscode.commands.executeCommand(
+        'vscode.executeDocumentSymbolProvider',
+        testMacroFileUri
+    );
     assert.equal(expectedItems.length, actualItems.length);
     expectedItems.forEach((expectedItem, i) => {
         const actualItem = actualItems[i];
         assert.equal(expectedItem.name, actualItem.name);
         assert.equal(expectedItem.kind, actualItem.kind);
         assert.ok(expectedItem.range?.isEqual(actualItem.range!));
-        assert.ok(
-            expectedItem.selectionRange?.isEqual(actualItem.selectionRange!)
-        );
+        assert.ok(expectedItem.selectionRange?.isEqual(actualItem.selectionRange!));
         assert.equal(expectedItem.detail, actualItem.detail);
     });
 }

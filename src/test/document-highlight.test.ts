@@ -54,33 +54,21 @@ suite('Document highlights in .dshl files', () => {
         );
         await openDocumentAndAssertHighlights(
             macroWithoutContentCursorPosition,
-            getDocumentHighlights(
-                macroWithoutContentUsage,
-                macroWithoutContentDeclaration
-            )
+            getDocumentHighlights(macroWithoutContentUsage, macroWithoutContentDeclaration)
         );
         await openDocumentAndAssertHighlights(
             macroWithParametersCursorPosition,
-            getDocumentHighlights(
-                macroWithParametersUsage,
-                macroWithParametersDeclaration
-            )
+            getDocumentHighlights(macroWithParametersUsage, macroWithParametersDeclaration)
         );
         await openDocumentAndAssertHighlights(
             macroWithWrongNumberOfParametersCursorPosition,
-            getDocumentHighlights(
-                macroWithWrongNumberOfParametersUsage,
-                macroWithWrongNumberOfParametersDeclaration
-            )
+            getDocumentHighlights(macroWithWrongNumberOfParametersUsage, macroWithWrongNumberOfParametersDeclaration)
         );
         await openDocumentAndAssertHighlights(
             optionalMacroCursorPosition,
             getDocumentHighlights(optionalMacroUsage, optionalMacroDeclaration)
         );
-        await openDocumentAndAssertHighlights(
-            macroWithoutDefinitionCursorPosition,
-            []
-        );
+        await openDocumentAndAssertHighlights(macroWithoutDefinitionCursorPosition, []);
         await openDocumentAndAssertHighlights(
             strangeMacroCursorPosition,
             getDocumentHighlights(strangeMacroUsage, strangeMacroDeclaration)
@@ -93,10 +81,7 @@ suite('Document highlights in .dshl files', () => {
     });
 });
 
-function getDocumentHighlights(
-    mu: MacroUsage,
-    md?: MacroDeclaration
-): vscode.DocumentHighlight[] {
+function getDocumentHighlights(mu: MacroUsage, md?: MacroDeclaration): vscode.DocumentHighlight[] {
     const result: vscode.DocumentHighlight[] = [];
     if (md) {
         result.push({
@@ -115,12 +100,11 @@ async function openDocumentAndAssertHighlights(
     position: vscode.Position,
     expectedItems: vscode.DocumentHighlight[]
 ): Promise<void> {
-    const actualItems: vscode.DocumentHighlight[] =
-        await vscode.commands.executeCommand(
-            'vscode.executeDocumentHighlights',
-            testMacroFileUri,
-            position
-        );
+    const actualItems: vscode.DocumentHighlight[] = await vscode.commands.executeCommand(
+        'vscode.executeDocumentHighlights',
+        testMacroFileUri,
+        position
+    );
     assert.equal(expectedItems.length, actualItems?.length ?? 0);
     expectedItems.forEach((expectedItem, i) => {
         const actualItem = actualItems[i];

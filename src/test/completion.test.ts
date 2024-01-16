@@ -60,9 +60,7 @@ suite('Code completion in .dshl files', () => {
     });
 });
 
-function getCompletionItems(
-    ...mds: MacroDeclaration[]
-): vscode.CompletionItem[] {
+function getCompletionItems(...mds: MacroDeclaration[]): vscode.CompletionItem[] {
     return mds.map((md) => ({
         label: md.name,
         kind: vscode.CompletionItemKind.Constant,
@@ -92,9 +90,7 @@ async function openDocumentAndAssertCompletionItems(
         assert.equal(actualItem.detail, expectedItem.detail);
     });
     notExpectedItems.forEach((notExpectedItem) => {
-        const actualItem = actualItems.find(
-            (ai) => ai.label === notExpectedItem.label
-        );
+        const actualItem = actualItems.find((ai) => ai.label === notExpectedItem.label);
         assert.ok(!actualItem);
     });
 }
