@@ -13,10 +13,7 @@ import {
     testMacroFileUri,
 } from './macro-helper';
 
-// TODO
-// It seems that the in CI, VS Code uses the default, indentation-based folding provider, instead of our folding provider.
-// The editor.foldingStrategy configuration's value is auto, so it shouldn't fallback to the default provider.
-// I have no idea why, so until I figure it out, I'm skipping this test.
+// TODO: re-enable this test when the provider finds all ranges
 suite.skip('Folding ranges in .dshl files', () => {
     test('should create folding ranges for the DSHL macro declarations', async () => {
         await activate(testMacroFileUri);
