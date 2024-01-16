@@ -9,15 +9,71 @@ Dagor Shader Language Support for Visual Studio Code. If you're not on x64 archi
 
 ### Syntax highlight
 
+The extension colorizes types, variables, functions, constructors, keywords, modifiers, semantics, attributes, preprocessor directives, operators, literals, and comments.
+
 ![syntax highlight, dark theme](res/screenshots/syntax-highlight-dark.png)
 
 ![syntax highlight, light theme](res/screenshots/syntax-highlight-light.png)
 
+### Code completion
+
+The extension provides types, variables, functions, constructors, keywords, modifiers, semantics, attributes, preprocessor directives, code snippets, and DSHL macros using IntelliSense, according to the context. It can also give you a quick summary about the item, and links to the documentation when available.
+
+![code completion](res/screenshots/completion.gif)
+
+### Signature help
+
+The extension can display a signature helper for DSHL macros.
+
+![signature help](res/screenshots/signature-help.gif)
+
+### Document highlights
+
+The extension can highlight all the occurrences of the selected DSHL macro in the file.
+
+![highlights](res/screenshots/highlights.gif)
+
+### Hover
+
+The extension can provide useful information if you hover over DSHL macros.
+
+![hover](res/screenshots/hover.gif)
+
+### Document symbols
+
+The extension can provide outline information and breadcrumbs about the DSHL macros. You can also easily find them by typing a @ into the Command Palette.
+
+![symbols](res/screenshots/symbols.gif)
+
 ### Document links
 
-This feature only works in the desktop version.
+The extension can follow the DSHL and the HLSL include statements. This feature only works in the desktop version.
 
 ![document links](res/screenshots/document-link.gif)
+
+### Inlay hints
+
+The extension can show DSHL macro parameters in the source code.
+
+![inlay hints](res/screenshots/inlay-hints.png)
+
+### Go to / Peek definitions
+
+You can find (go to / peek) the definition of a DSHL macro.
+
+![definitions](res/screenshots/definition.gif)
+
+### Go to / Peek declarations
+
+You can find (go to / peek) the declaration of a DSHL macro.
+
+![declarations](res/screenshots/declaration.gif)
+
+### Go to / Peek implementations
+
+You can find (go to / peek) the implementation of DSHL macro.
+
+![implementations](res/screenshots/implementation.gif)
 
 ### Comment toggling
 
@@ -62,6 +118,19 @@ If you have any problems or feature request for the extension, feel free to crea
 ## Release Notes
 
 For more information, see the [changelog](CHANGELOG.md).
+
+### 1.1.0
+
+-   Code completion (for built-in items, and DSHL macros)
+-   Signature help (for DSHL macros)
+-   Document highlights (for DSHL macros)
+-   Hover (for DSHL macros)
+-   Document symbols (for DSHL macros)
+-   Inlay hints (for DSHL macros)
+-   Go to definition (for DSHL macros)
+-   Go to declaration (for DSHL macros)
+-   Go to implementation (for DSHL macros)
+-   Several bugfixes and optimizations
 
 ### 1.0.0
 
