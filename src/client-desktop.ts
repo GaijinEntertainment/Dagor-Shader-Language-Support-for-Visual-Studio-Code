@@ -59,7 +59,7 @@ function getExecutableFileName(): string {
 }
 
 async function makeFileExecutableIfNeeded(file: string): Promise<boolean> {
-    if (os.platform() !== 'win32') {
+    if (os.platform() === 'win32') {
         return true;
     }
     try {
