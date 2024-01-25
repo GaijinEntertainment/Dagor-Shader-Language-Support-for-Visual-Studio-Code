@@ -104,8 +104,8 @@
             ],
             "explorer/context": [
                 {
-                    "when": "resourceLangId == blk && resourceFilename =~ /shaders_.*?\\.blk$/",
-                    "command": "dagorShaderLanguageServer.setShaderConfig"
+                    "command": "dagorShaderLanguageServer.setShaderConfig",
+                    "when": "!isWeb && resourceFilename =~ /shaders_.*?\\.blk$/"
                 }
             ]
         }
