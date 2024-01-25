@@ -88,7 +88,27 @@
                     }
                 }
             }
-        ]
+        ],
+        "commands": [
+            {
+                "command": "dagorShaderLanguageServer.setShaderConfig",
+                "title": "Set as shader config override"
+            }
+        ],
+        "menus": {
+            "commandPalette": [
+                {
+                    "command": "dagorShaderLanguageServer.setShaderConfig",
+                    "when": "false"
+                }
+            ],
+            "explorer/context": [
+                {
+                    "when": "resourceLangId == blk && resourceFilename =~ /shaders_.*?\\.blk$/",
+                    "command": "dagorShaderLanguageServer.setShaderConfig"
+                }
+            ]
+        }
     },
     "main": "./out/client-desktop",
     "browser": "./out/client-web",
