@@ -2,20 +2,13 @@ import * as assert from 'assert';
 import * as vscode from 'vscode';
 
 import { activate } from './helper';
-import {
-    MacroUsage,
-    macroWithParametersUsage,
-    macroWithWrongNumberOfParametersUsage,
-    strangeMacroUsage,
-    testMacroFileUri,
-} from './macro-helper';
+import { MacroUsage, macroWithParametersUsage, strangeMacroUsage, testMacroFileUri } from './macro-helper';
 
 suite('Inlay hints in .dshl files', () => {
     test('should show inlay hints for DSHL macro arguments', async () => {
         await activate(testMacroFileUri);
         await openDocumentAndAssertInlayHints([
             ...getInlayHints(macroWithParametersUsage),
-            ...getInlayHints(macroWithWrongNumberOfParametersUsage),
             ...getInlayHints(strangeMacroUsage),
         ]);
     });
@@ -40,7 +33,8 @@ async function openDocumentAndAssertInlayHints(expectedItems: vscode.InlayHint[]
     assert.equal(expectedItems.length, actualItems.length);
     expectedItems.forEach((expectedItem, i) => {
         const actualItem = actualItems[i];
-        assert.equal(expectedItem.label, actualItem.label);
+        const actualLabel = actualItem.label[0] as vscode.InlayHintLabelPart;
+        assert.equal(expectedItem.label, actualLabel.value);
         assert.ok(expectedItem.position?.isEqual(actualItem.position!));
         assert.equal(expectedItem.kind, actualItem.kind);
         assert.equal(expectedItem.paddingLeft, actualItem.paddingLeft);

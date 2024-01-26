@@ -88,7 +88,27 @@
                     }
                 }
             }
-        ]
+        ],
+        "commands": [
+            {
+                "command": "dagorShaderLanguageServer.setShaderConfig",
+                "title": "Set as shader config override"
+            }
+        ],
+        "menus": {
+            "commandPalette": [
+                {
+                    "command": "dagorShaderLanguageServer.setShaderConfig",
+                    "when": "false"
+                }
+            ],
+            "explorer/context": [
+                {
+                    "command": "dagorShaderLanguageServer.setShaderConfig",
+                    "when": "!isWeb && resourceFilename =~ /shaders_.*?\\.blk$/"
+                }
+            ]
+        }
     },
     "main": "./out/client-desktop",
     "browser": "./out/client-web",
@@ -103,7 +123,7 @@
         "package-all": "start npm run package-universal & start npm run package-windows-x64 & start npm run package-macos-x64 & start npm run package-linux-x64",
         "build-tests": "tsc -p ./tsconfig.test.json",
         "watch-tests": "tsc -w -p ./tsconfig.test.json",
-        "open-in-browser": "vscode-test-web --extensionDevelopmentPath=. .",
+        "open-in-browser": "vscode-test-web --extensionDevelopmentPath=. ./testFixture",
         "eslint": "eslint ./src ./Dagor-Shader-Language-Server/src --ext .ts",
         "prettier-lint": "prettier --check .",
         "prettier-format": "prettier --write .",

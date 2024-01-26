@@ -1,7 +1,13 @@
-import { ExtensionContext, ExtensionMode } from 'vscode';
+import { ExtensionContext, ExtensionMode, Uri, commands, window, workspace } from 'vscode';
 import { LanguageClient, LanguageClientOptions, ServerOptions, TransportKind } from 'vscode-languageclient/node';
 
-import { EXTENSION_ID, EXTENSION_NAME } from './constant';
+import {
+    COMMAND_ID_SET_SHADER_CONFIG,
+    CONFIGURATION_ID_SHADER_CONFIG_OVERRIDE,
+    EXTENSION_ID,
+    EXTENSION_NAME,
+    LANGUAGE_SERVER_ID,
+} from './constant';
 
 import * as fsp from 'fs/promises';
 import * as os from 'os';
@@ -10,6 +16,26 @@ import * as path from 'path';
 let client: LanguageClient;
 
 export async function activate(context: ExtensionContext): Promise<void> {
+    addCommands(context);
+    startServer(context);
+}
+
+export function deactivate(): Thenable<void> | undefined {
+    return client?.stop();
+}
+
+function addCommands(context: ExtensionContext): void {
+    context.subscriptions.push(
+        commands.registerCommand(COMMAND_ID_SET_SHADER_CONFIG, async (uri: Uri) => {
+            await workspace
+                .getConfiguration(LANGUAGE_SERVER_ID)
+                .update(CONFIGURATION_ID_SHADER_CONFIG_OVERRIDE, workspace.asRelativePath(uri));
+            await window.showInformationMessage('Shader config override changed');
+        })
+    );
+}
+
+async function startServer(context: ExtensionContext): Promise<void> {
     const serverOptions = await getServerOptions(context);
     const clientOptions: LanguageClientOptions = {
         documentSelector: [{ language: 'dshl' }, { language: 'hlsl' }],
@@ -17,10 +43,6 @@ export async function activate(context: ExtensionContext): Promise<void> {
     client = new LanguageClient(EXTENSION_ID, EXTENSION_NAME, serverOptions, clientOptions);
 
     client.start();
-}
-
-export function deactivate(): Thenable<void> | undefined {
-    return client?.stop();
 }
 
 async function getServerOptions(context: ExtensionContext): Promise<ServerOptions> {
@@ -59,7 +81,7 @@ function getExecutableFileName(): string {
 }
 
 async function makeFileExecutableIfNeeded(file: string): Promise<boolean> {
-    if (os.platform() !== 'win32') {
+    if (os.platform() === 'win32') {
         return true;
     }
     try {
