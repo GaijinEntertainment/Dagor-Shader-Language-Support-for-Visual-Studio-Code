@@ -1,5 +1,39 @@
 # Change Log
 
+## [1.2.0] - 2024.01.15.
+
+### Added
+
+-   Code completion (for HLSL defines, include statements, DSHL macro parameters)
+-   Document highlights (for HLSL defines, DSHL macro parameters)
+-   Hover (for HLSL defines)
+-   Document symbols (for HLSL defines)
+-   Inlay hints (for HLSL defines)
+-   Go to definition (for HLSL defines, DSHL macro parameters)
+-   Go to declaration (for HLSL defines, DSHL macro parameters)
+-   Go to implementation (for HLSL defines)
+-   A context menu item to the shader config files to make shader config overriding easier
+
+### Improved
+
+-   Handling multiple declarations for DSHL macros
+-   Making DSHL macros hierarchical in the document symbols
+-   Adding a link to DSHL macro parameters in inlay hints
+-   Various optimizations
+
+### Fixed
+
+-   Fixing an incorrect condition about making the language server executable in Linux and Mac
+-   Naming preshaders correctly in snippets
+-   Disabling the include links in the web version
+-   Providing HLSL code completion instead of DSHL code completion in .hlsli files
+-   Adding ##assert to code completion and syntax highlight
+-   Adding the missing DSHL modifiers, properties, and functions to the code completion and the syntax highlight, removing unused operators from the syntax highlight
+-   Refreshing inlay hints only if it is supported
+-   Fixing a bug if there are more DSHL macro arguments than macro parameters
+-   Fixing a bug when a DSHL macro appeared multiple times in code completion
+-   Preventing unnecessary analyzations, when file is not changed, just opened in the IDE
+
 ## [1.1.0] - 2024.01.16.
 
 ### Added
