@@ -17,7 +17,7 @@ The extension colorizes types, variables, functions, constructors, keywords, mod
 
 ### Code completion
 
-The extension provides types, variables, functions, constructors, keywords, modifiers, semantics, attributes, preprocessor directives, code snippets, and DSHL macros using IntelliSense, according to the context. It can also give you a quick summary about the item, and links to the documentation when available.
+The extension provides types, variables, functions, constructors, keywords, modifiers, semantics, attributes, preprocessor directives, code snippets, DSHL macros, and HLSL defines using IntelliSense, according to the context. It can also give you a quick summary about the item, and links to the documentation when available.
 
 ![code completion](res/screenshots/completion.gif)
 
@@ -29,19 +29,19 @@ The extension can display a signature helper for DSHL macros.
 
 ### Document highlights
 
-The extension can highlight all the occurrences of the selected DSHL macro in the file.
+The extension can highlight all the occurrences of the selected DSHL macro or HLSL define in the file.
 
 ![highlights](res/screenshots/highlights.gif)
 
 ### Hover
 
-The extension can provide useful information if you hover over DSHL macros.
+The extension can provide useful information if you hover over DSHL macros or HLSL defines.
 
 ![hover](res/screenshots/hover.gif)
 
 ### Document symbols
 
-The extension can provide outline information and breadcrumbs about the DSHL macros. You can also easily find them by typing a @ into the Command Palette.
+The extension can provide outline information and breadcrumbs about DSHL macros and HLSL defines. You can also easily find them by typing a @ into the Command Palette.
 
 ![symbols](res/screenshots/symbols.gif)
 
@@ -53,25 +53,25 @@ The extension can follow the DSHL and the HLSL include statements. This feature 
 
 ### Inlay hints
 
-The extension can show DSHL macro parameters in the source code.
+The extension can show DSHL macro and HLSL define parameters in the source code.
 
 ![inlay hints](res/screenshots/inlay-hints.png)
 
 ### Go to / Peek definitions
 
-You can find (go to / peek) the definition of a DSHL macro.
+You can find (go to / peek) the definition of a DSHL macro or a HLSL define.
 
 ![definitions](res/screenshots/definition.gif)
 
 ### Go to / Peek declarations
 
-You can find (go to / peek) the declaration of a DSHL macro.
+You can find (go to / peek) the declaration of a DSHL macro or a HLSL define.
 
 ![declarations](res/screenshots/declaration.gif)
 
 ### Go to / Peek implementations
 
-You can find (go to / peek) the implementation of DSHL macro.
+You can find (go to / peek) the implementation of DSHL macro or a HLSL define.
 
 ![implementations](res/screenshots/implementation.gif)
 
@@ -118,6 +118,22 @@ If you have any problems or feature request for the extension, feel free to crea
 ## Release Notes
 
 For more information, see the [changelog](CHANGELOG.md).
+
+### 1.2.0
+
+-   Code completion (for HLSL defines, include statements, DSHL macro parameters)
+-   Document highlights (for HLSL defines, DSHL macro parameters)
+-   Hover (for HLSL defines)
+-   Document symbols (for HLSL defines)
+-   Inlay hints (for HLSL defines)
+-   Go to definition (for HLSL defines, DSHL macro parameters)
+-   Go to declaration (for HLSL defines, DSHL macro parameters)
+-   Go to implementation (for HLSL defines)
+-   A context menu item to the shader config files to make shader config overriding easier
+-   Handling multiple declarations for DSHL macros
+-   Making DSHL macros hierarchical in the document symbols
+-   Adding a link to DSHL macro parameters in inlay hints
+-   Several bugfixes and optimizations
 
 ### 1.1.0
 
