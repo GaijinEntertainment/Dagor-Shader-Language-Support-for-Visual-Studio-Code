@@ -24,11 +24,17 @@ jobs:
             - name: Install dependencies for the language server
               run: npm ci
               working-directory: ./Dagor-Shader-Language-Server
-            - name: Generate ANTLR lexer
+            - name: Generate condition ANTLR lexer
               run: npx antlr4ts -o "../../src/_generated" "ConditionLexer.g4"
               working-directory: ./Dagor-Shader-Language-Server/grammar/antlr
-            - name: Generate ANTLR parser
+            - name: Generate condition ANTLR parser
               run: npx antlr4ts -o "../../src/_generated" -no-listener -visitor "ConditionParser.g4"
+              working-directory: ./Dagor-Shader-Language-Server/grammar/antlr
+            - name: Generate DSHL ANTLR lexer
+              run: npx antlr4ts -o "../../src/_generated" "DshlLexer.g4"
+              working-directory: ./Dagor-Shader-Language-Server/grammar/antlr
+            - name: Generate DSHL ANTLR parser
+              run: npx antlr4ts -o "../../src/_generated" -no-listener -visitor "DshlParser.g4"
               working-directory: ./Dagor-Shader-Language-Server/grammar/antlr
             - name: Build
               run: npm run build
