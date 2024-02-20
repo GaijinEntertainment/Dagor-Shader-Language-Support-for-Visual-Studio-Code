@@ -51,6 +51,16 @@
                 "type": "npm"
             },
             "internalConsoleOptions": "openOnSessionStart"
+        },
+        {
+            "name": "Debug DSHL ANTLR grammar",
+            "type": "antlr-debug",
+            "request": "launch",
+            "input": "testFixture/include_test_game/prog/shaders/test.hlsl",
+            "grammar": "Dagor-Shader-Language-Server/grammar/antlr/DshlParser.g4",
+            "startRule": "hlsl",
+            "printParseTree": true,
+            "visualParseTree": true
         }
     ],
     "compounds": [
