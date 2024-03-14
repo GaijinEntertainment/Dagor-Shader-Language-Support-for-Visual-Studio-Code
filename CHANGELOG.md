@@ -1,5 +1,37 @@
 # Change Log
 
+## [1.3.0] - 2024.02.14.
+
+### Added
+
+-   Code completion (for DSHL variables, shaders, and block statements)
+-   Document highlights (for DSHL variables, functions, shaders, and block statements)
+-   Hover (for DSHL variables, functions, shaders, and block statements)
+-   Document symbols (for DSHL variables, shaders, and block statements)
+-   Inlay hints (for DSHL functions)
+-   Signature help (for DSHL functions)
+-   Go to definition (for DSHL variables, functions, shaders, and block statements)
+-   Go to declaration (for DSHL variables, functions, shaders, and block statements)
+-   Go to implementation (for DSHL functions, shaders, and block statements)
+-   Adding assume and supports code snippets
+-   Adding folding ranges based on blocks
+
+### Improved
+
+-   Better type informations in code completion and in document symbols
+-   Updated packages
+-   Various optimizations
+
+### Fixed
+
+-   Fixing a bug where closing and reopening a file prevented to update the file analyzation
+-   Fixing preprocessor directives in one liner hlsl blocks in syntax highlight
+-   Fixing macros before loops and ifs in syntax highlight
+-   Fixing syntax highlight when #defines contain ##
+-   Adding @sampler to the HLSL syntax highlight
+-   Using the cleaned content of DSHL macros for expansion instead of the original to get rid of comments
+-   Fixing a bug in HLSL macro expansion, where positions were wrong positions were computed
+
 ## [1.2.0] - 2024.01.15.
 
 ### Added
