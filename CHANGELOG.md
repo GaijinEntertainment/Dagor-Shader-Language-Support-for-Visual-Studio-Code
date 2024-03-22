@@ -1,6 +1,12 @@
 # Change Log
 
-## [1.3.0] - 2024.02.14.
+## [1.4.0 Pre-release] - 2024.03.22.
+
+### Added
+
+-   Code formatting (normal, range, ranges)
+
+## [1.3.0] - 2024.03.14.
 
 ### Added
 
@@ -32,7 +38,7 @@
 -   Using the cleaned content of DSHL macros for expansion instead of the original to get rid of comments
 -   Fixing a bug in HLSL macro expansion, where positions were wrong positions were computed
 
-## [1.2.0] - 2024.01.15.
+## [1.2.0] - 2024.02.15.
 
 ### Added
 
