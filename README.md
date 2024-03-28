@@ -119,6 +119,10 @@ If you have any problems or feature request for the extension, feel free to crea
 
 For more information, see the [changelog](CHANGELOG.md).
 
+### 1.4.1 Pre-release
+
+-   Diagnostics
+
 ### 1.4.0 Pre-release
 
 -   Code formatting

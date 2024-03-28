@@ -1,5 +1,15 @@
 # Change Log
 
+## [1.4.1 Pre-release] - 2024.03.28.
+
+### Added
+
+-   Diagnostics
+
+### Improved
+
+-   Updated packages
+
 ## [1.4.0 Pre-release] - 2024.03.22.
 
 ### Added
