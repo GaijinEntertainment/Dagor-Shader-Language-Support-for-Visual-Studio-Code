@@ -119,9 +119,15 @@ If you have any problems or feature request for the extension, feel free to crea
 
 For more information, see the [changelog](CHANGELOG.md).
 
+### 1.4.2 Pre-release
+
+-   Migrating includes from document links to go to declaration/definition/implementation
+-   Other smaller improvements
+
 ### 1.4.1 Pre-release
 
 -   Diagnostics
+-   Other smaller improvements
 
 ### 1.4.0 Pre-release
 

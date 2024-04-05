@@ -1,5 +1,12 @@
 # Change Log
 
+## [1.4.2 Pre-release] 2024.04.05.
+
+### Improved
+
+-   Migrating includes from document links to go to declaration/definition/implementation
+-   Updated packages
+
 ## [1.4.1 Pre-release] - 2024.03.28.
 
 ### Added
