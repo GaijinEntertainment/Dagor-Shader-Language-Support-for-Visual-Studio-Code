@@ -31,18 +31,3 @@ export const getDocumentPath = (filePath: string) => {
 export const getDocumentUri = (filePath: string) => {
     return vscode.Uri.file(getDocumentPath(filePath));
 };
-
-export function getRange(
-    startLine: number,
-    startCharacter: number,
-    endLine: number,
-    endCharacter: number
-): vscode.Range {
-    const start = new vscode.Position(startLine, startCharacter);
-    const end = new vscode.Position(endLine, endCharacter);
-    return new vscode.Range(start, end);
-}
-
-export function getDocumenLink(range: vscode.Range): vscode.DocumentLink {
-    return new vscode.DocumentLink(range);
-}
