@@ -15,6 +15,12 @@ The extension colorizes types, variables, functions, constructors, keywords, mod
 
 ![syntax highlight, light theme](res/screenshots/syntax-highlight-light.png)
 
+### Diagnostics
+
+The extension can show compile time errors or warnings when you open or save a file.
+
+![diagnostics](res/screenshots/diagnostics.gif)
+
 ### Code completion
 
 The extension provides types, variables, functions, constructors, keywords, modifiers, semantics, attributes, shaders, block statements, preprocessor directives, code snippets, DSHL macros, and HLSL defines using IntelliSense, according to the context. It can also give you a quick summary about the item, and links to the documentation when available.
@@ -45,11 +51,11 @@ The extension can provide outline information and breadcrumbs about DSHL variabl
 
 ![symbols](res/screenshots/symbols.gif)
 
-### Document links
+### Formatting
 
-The extension can follow the DSHL and the HLSL include statements. This feature only works in the desktop version.
+The extension can format the whole document, the selected region, or regions.
 
-![document links](res/screenshots/document-link.gif)
+![format](res/screenshots/format.gif)
 
 ### Inlay hints
 
@@ -59,19 +65,19 @@ The extension can show DSHL function, macro, and HLSL define parameters in the s
 
 ### Go to / Peek definitions
 
-You can find (go to / peek) the definition of a DSHL variable, function, shader, block statement, macro or a HLSL define.
+You can find (go to / peek) the definition of a DSHL variable, function, shader, block statement, macro, HLSL define, or to the included file.
 
 ![definitions](res/screenshots/definition.gif)
 
 ### Go to / Peek declarations
 
-You can find (go to / peek) the declaration of a DSHL variable, function, shader, block statement, macro or a HLSL define.
+You can find (go to / peek) the declaration of a DSHL variable, function, shader, block statement, macro, HLSL define, or to the included file.
 
 ![declarations](res/screenshots/declaration.gif)
 
 ### Go to / Peek implementations
 
-You can find (go to / peek) the implementation of DSHL function, shader, block statement, macro or a HLSL define.
+You can find (go to / peek) the implementation of DSHL function, shader, block statement, macro, HLSL define, or to the included file.
 
 ![implementations](res/screenshots/implementation.gif)
 
@@ -118,6 +124,13 @@ If you have any problems or feature request for the extension, feel free to crea
 ## Release Notes
 
 For more information, see the [changelog](CHANGELOG.md).
+
+### 1.5.0
+
+-   Diagnostics
+-   Code formatting
+-   Migrating includes from document links to go to declaration/definition/implementation
+-   Other smaller improvements
 
 ### 1.4.2 Pre-release
 
