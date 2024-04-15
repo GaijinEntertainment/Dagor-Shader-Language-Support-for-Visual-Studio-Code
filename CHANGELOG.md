@@ -1,5 +1,24 @@
 # Change Log
 
+## [1.6.0 Pre-release] 2024.04.15.
+
+### Added
+
+-   Code completion (for HLSL variables)
+-   Document highlights (for HLSL variables)
+-   Hover (for HLSL variables)
+-   Document symbols (for HLSL variables)
+-   Go to definition (for HLSL variables)
+-   Go to declaration (for HLSL variables)
+
+### Improved
+
+-   Updated packages
+
+### Fixed
+
+-   Fixing a formatting bug where line continuation characters caused formatting inside defines
+
 ## [1.5.0] - 2024.04.09.
 
 ### Added
@@ -10,11 +29,11 @@
 ### Improved
 
 -   Migrating includes from document links to go to declaration/definition/implementation
+-   Updated packages
 
 ### Fixed
 
 -   Fixing an error where certain modifiers' range was used instead of the variable's range
--   Updated packages
 
 ## [1.4.2 Pre-release] 2024.04.05.
 
