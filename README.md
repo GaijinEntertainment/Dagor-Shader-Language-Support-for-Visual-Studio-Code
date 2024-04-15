@@ -125,6 +125,16 @@ If you have any problems or feature request for the extension, feel free to crea
 
 For more information, see the [changelog](CHANGELOG.md).
 
+### 1.6.0
+
+-   Code completion (for HLSL variables)
+-   Document highlights (for HLSL variables)
+-   Hover (for HLSL variables)
+-   Document symbols (for HLSL variables)
+-   Go to definition (for HLSL variables)
+-   Go to declaration (for HLSL variables)
+-   Other smaller bugfixes and improvements
+
 ### 1.5.0
 
 -   Diagnostics
