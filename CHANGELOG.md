@@ -1,5 +1,30 @@
 # Change Log
 
+## [1.7.0] 2024.04.22.
+
+### Added
+
+-   Code completion (for HLSL variables, structs, enums, classes, and interfaces)
+-   Document highlights (for HLSL variables, structs, enums, classes, and interfaces)
+-   Hover (for HLSL variables, structs, enums, classes, and interfaces)
+-   Document symbols (for HLSL variables, structs, enums, classes, and interfaces)
+-   Go to definition (for HLSL variables, structs, enums, classes, and interfaces)
+-   Go to declaration (for HLSL variables, structs, enums, classes, and interfaces)
+-   Go to implementation (for HLSL structs, enums, classes, and interfaces)
+-   Go to type definition (for HLSL variables)
+
+### Improved
+
+-   Adding the parameters to macros and defines in code completion
+-   Making document symbol icon selection more robust
+-   Updated packages
+
+### Fixed
+
+-   Updating the game selection logic based on the new vscodeconfig
+-   Preventing duplicated items in code completion
+-   Fixing a formatting bug where line continuation characters caused formatting inside defines
+
 ## [1.6.0 Pre-release] 2024.04.15.
 
 ### Added
