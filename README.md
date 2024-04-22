@@ -35,19 +35,19 @@ The extension can display a signature helper for DSHL functions, and macros.
 
 ### Document highlights
 
-The extension can highlight all the occurrences of the selected DSHL variable, function, shader, block statement, macro or HLSL define in the file.
+The extension can highlight all the occurrences of the selected DSHL variable, function, shader, block statement, macro, HLSL variable, struct, class, interface, enum, or define in the file.
 
 ![highlights](res/screenshots/highlights.gif)
 
 ### Hover
 
-The extension can provide useful information if you hover over DSHL variables, functions, shaders, block statements, macros or HLSL defines.
+The extension can provide useful information if you hover over DSHL variables, functions, shaders, block statements, macros, HLSL variables, structs, classes, interfaces, enums, or defines.
 
 ![hover](res/screenshots/hover.gif)
 
 ### Document symbols
 
-The extension can provide outline information and breadcrumbs about DSHL variables, shaders, block statements, macros and HLSL defines. You can also easily find them by typing a @ into the Command Palette.
+The extension can provide outline information and breadcrumbs about DSHL variables, shaders, block statements, macros, HLSL variables, structs, classes, interfaces, enums, and defines. You can also easily find them by typing a @ into the Command Palette.
 
 ![symbols](res/screenshots/symbols.gif)
 
@@ -65,21 +65,27 @@ The extension can show DSHL function, macro, and HLSL define parameters in the s
 
 ### Go to / Peek definitions
 
-You can find (go to / peek) the definition of a DSHL variable, function, shader, block statement, macro, HLSL define, or to the included file.
+You can find (go to / peek) the definition of a DSHL variable, function, shader, block statement, macro, HLSL variable, struct, class, interface, enum, define, or to the included file.
 
 ![definitions](res/screenshots/definition.gif)
 
 ### Go to / Peek declarations
 
-You can find (go to / peek) the declaration of a DSHL variable, function, shader, block statement, macro, HLSL define, or to the included file.
+You can find (go to / peek) the declaration of a DSHL variable, function, shader, block statement, macro, HLSL variable, struct, class, interface, enum, define, or to the included file.
 
 ![declarations](res/screenshots/declaration.gif)
 
 ### Go to / Peek implementations
 
-You can find (go to / peek) the implementation of DSHL function, shader, block statement, macro, HLSL define, or to the included file.
+You can find (go to / peek) the implementation of a DSHL function, shader, block statement, macro, HLSL struct, class, interface, enum, define, or to the included file.
 
 ![implementations](res/screenshots/implementation.gif)
+
+### Go to / Peek type definition
+
+You can find (go to / peek) the type definition of an HLSL variable.
+
+![type declaration](res/screenshots/type-definition.gif)
 
 ### Comment toggling
 
@@ -125,7 +131,19 @@ If you have any problems or feature request for the extension, feel free to crea
 
 For more information, see the [changelog](CHANGELOG.md).
 
-### 1.6.0
+### 1.7.0
+
+-   Code completion (for HLSL variables, structs, enums, classes, and interfaces)
+-   Document highlights (for HLSL variables, structs, enums, classes, and interfaces)
+-   Hover (for HLSL variables, structs, enums, classes, and interfaces)
+-   Document symbols (for HLSL variables, structs, enums, classes, and interfaces)
+-   Go to definition (for HLSL variables, structs, enums, classes, and interfaces)
+-   Go to declaration (for HLSL variables, structs, enums, classes, and interfaces)
+-   Go to implementation (for HLSL structs, enums, classes, and interfaces)
+-   Go to type definition (for HLSL variables)
+-   Several improvements, and bugfixes
+
+### 1.6.0 Pre-release
 
 -   Code completion (for HLSL variables)
 -   Document highlights (for HLSL variables)
