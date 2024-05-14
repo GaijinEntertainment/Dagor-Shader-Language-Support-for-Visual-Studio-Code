@@ -1,5 +1,45 @@
 # Change Log
 
+## [1.8.0] 2024.05.14.
+
+### Added
+
+-   Code completion (for HLSL struct, class, and enum members)
+-   Document highlights (for HLSL struct, class, and enum members)
+-   Hover (for HLSL struct, class, and enum members)
+-   Go to definition (for HLSL struct, class, and enum members)
+-   Go to declaration (for HLSL struct, class, and enum members)
+-   Go to implementation (for HLSL struct, and class members)
+-   Go to type definition (for HLSL struct, and class members)
+-   Type hierarchy (for HLSL structs, classes, and interfaces)
+-   Semantic highlight (for variables and types)
+
+### Improved
+
+-   Handling inherited HLSL struct, and class members
+-   Handling embedded HLSL structs, classes, interfaces, and enums
+-   Handling inline struct, class, interface, and enum declarations
+-   Handling anonymous struct, class, interface, and enum declarations
+-   Handling arrays
+-   Adding type inheritance to syntax highlight
+-   Handling built-in HLSL structs and enums
+-   Adding built-in struct and enum members with descriptions and values
+-   Adding descriptions to code completion from the new DSHL docs
+-   Handling casting
+-   Making enum members available in enum declarations
+-   Handling non-class enum members
+-   Handling prefixed enum members
+-   Adding type usages from function return types
+-   Making identifiers before double colons colored as types
+
+### Fixed
+
+-   Fixing a bug where the extension couldn't find type declarations outside of the current hlsl block
+-   Removing the public modifier, from syntax highlight and code completion
+-   Fixing an error where function parameters and some other variables could leak out of their scopes
+-   Fixing enum positions in macros
+-   Coloring built-in HLSL structs and enums as entity types to better match general syntax highlight
+
 ## [1.7.0] 2024.04.22.
 
 ### Added
