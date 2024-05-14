@@ -9,7 +9,7 @@ Dagor Shader Language Support for Visual Studio Code. If you're not on x64 archi
 
 ### Syntax highlight
 
-The extension colorizes types, variables, functions, constructors, keywords, modifiers, semantics, attributes, preprocessor directives, operators, literals, and comments.
+The extension colorizes types, variables, functions, constructors, keywords, modifiers, semantics, attributes, preprocessor directives, operators, literals, and comments. The extension uses semantic highlight to further improve code coloring.
 
 ![syntax highlight, dark theme](res/screenshots/syntax-highlight-dark.png)
 
@@ -87,6 +87,10 @@ You can find (go to / peek) the type definition of an HLSL variable.
 
 ![type declaration](res/screenshots/type-definition.gif)
 
+### Type hierarchy
+
+The extension can show the inheritance-tree of HLSL structs, classes, and interfaces.
+
 ### Comment toggling
 
 ![comment toggling](res/screenshots/comment-toggle.gif)
@@ -130,6 +134,19 @@ If you have any problems or feature request for the extension, feel free to crea
 ## Release Notes
 
 For more information, see the [changelog](CHANGELOG.md).
+
+### 1.8.0
+
+-   Code completion (for HLSL struct, class, and enum members)
+-   Document highlights (for HLSL struct, class, and enum members)
+-   Hover (for HLSL struct, class, and enum members)
+-   Go to definition (for HLSL struct, class, and enum members)
+-   Go to declaration (for HLSL struct, class, and enum members)
+-   Go to implementation (for HLSL struct, and class members)
+-   Go to type definition (for HLSL struct, and class members)
+-   Type hierarchy (for HLSL structs, classes, and interfaces)
+-   Semantic highlight (for variables and types)
+-   Several improvements, and bugfixes
 
 ### 1.7.0
 
