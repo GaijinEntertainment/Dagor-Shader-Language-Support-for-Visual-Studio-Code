@@ -1,5 +1,34 @@
 # Change Log
 
+## [1.9.0] 2024.06.14.
+
+### Added
+
+-   Code completion (for HLSL functions)
+-   Document highlights (for HLSL functions)
+-   Hover (for HLSL functions)
+-   Document symbols (for HLSL functions)
+-   Inlay hints (for HLSL functions)
+-   Signature help (for HLSL functions)
+-   Go to definition (for user HLSL functions)
+-   Go to declaration (for user HLSL functions)
+-   Go to implementation (for user HLSL functions)
+-   Rename (for all language constructs)
+-   Find all references (for all language constructs)
+-   Color picker (for HLSL variable initialization)
+
+### Improved
+
+-   Adding descriptions to several DSHL keywords, modifiers, types, channels, functions, and properties in code completion
+-   Adding shader stages and compile targets to code completion, syntax highlight and snippets
+-   Updated packages
+
+### Fixed
+
+-   Fixing an error where the function name range wasn't contained by the whole function range
+-   Removing backticks from DSHL code completion descriptions, because Visual Studio can't handle markdown
+-   Making loop, if, and switch scopes more accurate
+
 ## [1.8.0] 2024.05.14.
 
 ### Added
