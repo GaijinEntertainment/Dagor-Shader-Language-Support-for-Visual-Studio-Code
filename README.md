@@ -29,25 +29,25 @@ The extension provides types, variables, functions, constructors, keywords, modi
 
 ### Signature help
 
-The extension can display a signature helper for DSHL functions, and macros.
+The extension can display a signature helper for functions, and macros.
 
 ![signature help](res/screenshots/signature-help.gif)
 
 ### Document highlights
 
-The extension can highlight all the occurrences of the selected DSHL variable, function, shader, block statement, macro, HLSL variable, struct, class, interface, enum, or define in the file.
+The extension can highlight all the occurrences of the selected DSHL variable, function, shader, block statement, macro, HLSL variable, function, struct, class, interface, enum, or define in the file.
 
 ![highlights](res/screenshots/highlights.gif)
 
 ### Hover
 
-The extension can provide useful information if you hover over DSHL variables, functions, shaders, block statements, macros, HLSL variables, structs, classes, interfaces, enums, or defines.
+The extension can provide useful information if you hover over DSHL variables, functions, shaders, block statements, macros, HLSL variables, functions, structs, classes, interfaces, enums, or defines.
 
 ![hover](res/screenshots/hover.gif)
 
 ### Document symbols
 
-The extension can provide outline information and breadcrumbs about DSHL variables, shaders, block statements, macros, HLSL variables, structs, classes, interfaces, enums, and defines. You can also easily find them by typing a @ into the Command Palette.
+The extension can provide outline information and breadcrumbs about DSHL variables, shaders, block statements, macros, HLSL variables, functions, structs, classes, interfaces, enums, and defines. You can also easily find them by typing a @ into the Command Palette.
 
 ![symbols](res/screenshots/symbols.gif)
 
@@ -59,25 +59,25 @@ The extension can format the whole document, the selected region, or regions.
 
 ### Inlay hints
 
-The extension can show DSHL function, macro, and HLSL define parameters in the source code.
+The extension can show DSHL function, macro, and HLSL function, define parameters in the source code.
 
 ![inlay hints](res/screenshots/inlay-hints.png)
 
 ### Go to / Peek definitions
 
-You can find (go to / peek) the definition of a DSHL variable, function, shader, block statement, macro, HLSL variable, struct, class, interface, enum, define, or to the included file.
+You can find (go to / peek) the definition of a DSHL variable, function, shader, block statement, macro, HLSL variable, function, struct, class, interface, enum, define, or to the included file.
 
 ![definitions](res/screenshots/definition.gif)
 
 ### Go to / Peek declarations
 
-You can find (go to / peek) the declaration of a DSHL variable, function, shader, block statement, macro, HLSL variable, struct, class, interface, enum, define, or to the included file.
+You can find (go to / peek) the declaration of a DSHL variable, function, shader, block statement, macro, HLSL variable, function, struct, class, interface, enum, define, or to the included file.
 
 ![declarations](res/screenshots/declaration.gif)
 
 ### Go to / Peek implementations
 
-You can find (go to / peek) the implementation of a DSHL function, shader, block statement, macro, HLSL struct, class, interface, enum, define, or to the included file.
+You can find (go to / peek) the implementation of a DSHL function, shader, block statement, macro, HLSL function, struct, class, interface, enum, define, or to the included file.
 
 ![implementations](res/screenshots/implementation.gif)
 
@@ -90,6 +90,18 @@ You can find (go to / peek) the type definition of an HLSL variable.
 ### Type hierarchy
 
 The extension can show the inheritance-tree of HLSL structs, classes, and interfaces.
+
+### Rename
+
+The extension can rename DSHL variables, macros, macro parameters, HLSL types, enums, enum members, variables, functions, shaders, blocks, and defines.
+
+### Find all references
+
+The extension can find all references of DSHL variables, macros, macro parameters, HLSL types, enums, enum members, variables, functions, shaders, blocks, and defines.
+
+### Color picker
+
+The extension can show a color picker for HLSL `float3` or `float4` variable initializations.
 
 ### Comment toggling
 
@@ -134,6 +146,22 @@ If you have any problems or feature request for the extension, feel free to crea
 ## Release Notes
 
 For more information, see the [changelog](CHANGELOG.md).
+
+### 1.9.0
+
+-   Code completion (for HLSL functions)
+-   Document highlights (for HLSL functions)
+-   Hover (for HLSL functions)
+-   Document symbols (for HLSL functions)
+-   Inlay hints (for HLSL functions)
+-   Signature help (for HLSL functions)
+-   Go to definition (for user HLSL functions)
+-   Go to declaration (for user HLSL functions)
+-   Go to implementation (for user HLSL functions)
+-   Rename (for all language constructs)
+-   Find all references (for all language constructs)
+-   Color picker (for HLSL variable initialization)
+-   Several improvements, and bugfixes
 
 ### 1.8.0
 
